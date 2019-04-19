@@ -77,7 +77,7 @@
 +(void)load
 {
     [super load];
-
+    
     [IQFileManager removeItemsAtPath:[[self class] temporaryAudioStoragePath]];
     [IQFileManager removeItemsAtPath:[[self class] temporaryVideoStoragePath]];
     [IQFileManager removeItemsAtPath:[[self class] temporaryImageStoragePath]];
@@ -93,7 +93,7 @@
     _mediaView = nil;
     _mediaTypePickerView = nil;
     _settingsContainerView = nil;
-
+    
     _bottomContainerView = nil;
     _mediaTypePickerView = nil;
     _buttonCancel = nil;
@@ -128,19 +128,19 @@
     
     [self.view addSubview:self.mediaView];
     [self.view addSubview:self.settingsContainerView];
-
+    
     [self.view addSubview:self.bottomContainerView];
     [self.bottomContainerView setTopContentView:self.mediaTypePickerView];
     [self.bottomContainerView setLeftContentView:self.buttonCancel];
     [self.bottomContainerView setMiddleContentView:self.buttonCapture];
     [self.bottomContainerView setRightContentView:self.buttonSelect];
-
+    
     //Constraints
     {
         self.mediaView.translatesAutoresizingMaskIntoConstraints = NO;
         self.settingsContainerView.translatesAutoresizingMaskIntoConstraints = NO;
         self.bottomContainerView.translatesAutoresizingMaskIntoConstraints = NO;
-
+        
         NSDictionary *views = @{@"bottomContainerView":self.bottomContainerView,@"mediaView":self.mediaView,@"settingsContainerView":self.settingsContainerView};
         
         NSMutableArray<NSLayoutConstraint*> *constraints = [[NSMutableArray alloc] init];
@@ -153,22 +153,22 @@
         
         [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bottomContainerView]|" options:0 metrics:nil views:views]];
         [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bottomContainerView]|" options:0 metrics:nil views:views]];
-
+        
         [self.view addConstraints:constraints];
     }
     
     [IQFileManager removeItemsAtPath:[[self class] temporaryAudioStoragePath]];
     [IQFileManager removeItemsAtPath:[[self class] temporaryVideoStoragePath]];
     [IQFileManager removeItemsAtPath:[[self class] temporaryImageStoragePath]];
-
+    
     self.settingsContainerView.photoSettingsView.photoPreset = AVCaptureSessionPresetPhoto;
     self.settingsContainerView.videoSettingsView.videoPreset = AVCaptureSessionPreset1280x720;
-
+    
     _supportedCaptureModeForSession = [self.mediaTypes copy];
     _allowedQualityForSession = [self.allowedVideoQualities copy];
-
+    
     _captureMode = [[self.supportedCaptureModeForSession firstObject] integerValue];
-
+    
     switch (_captureMode)
     {
         case PHAssetMediaTypeImage:
@@ -184,7 +184,7 @@
         default:
             break;
     }
-
+    
     [self updateUI];
 }
 
@@ -212,7 +212,7 @@
     }
     
     [self session].delegate = self;
-
+    
     if (isFirstTimeAppearing)
     {
         isFirstTimeAppearing = NO;
@@ -224,7 +224,7 @@
             case PHAssetMediaTypeImage:
             {
                 [self setCaptureDevice:self.captureDevice animated:NO];
-
+                
                 if ([[self session] isFlashModeSupported:self.flashMode])
                 {
                     AVCaptureTorchMode torchMode = AVCaptureTorchModeAuto;
@@ -252,7 +252,7 @@
                     case AVCaptureFlashModeOn:  torchMode = AVCaptureTorchModeOn;   break;
                     case AVCaptureFlashModeAuto:torchMode = AVCaptureTorchModeAuto; break;
                 }
-
+                
                 if ([[self session] isTorchModeSupported:torchMode])
                 {
                     [[self session] setTorchMode:torchMode];
@@ -273,7 +273,7 @@
         
         self.mediaView.previewSession = [self session].captureSession;
     }
-
+    
     if ([[self session] isSessionRunning] == NO)
     {
         [[self session] startRunning];
@@ -344,15 +344,15 @@
         
         //Focus
         {
-//            [self.mediaView setFocusMode:[self session].focusMode];
-//            [self.mediaView setFocusPointOfInterest:[self session].focusPoint];
+            //            [self.mediaView setFocusMode:[self session].focusMode];
+            //            [self.mediaView setFocusPointOfInterest:[self session].focusPoint];
             [self.mediaView setFocusMode:AVCaptureFocusModeContinuousAutoFocus];
         }
-
+        
         //Exposure
         {
-//            [self.mediaView setExposureMode:[self session].exposureMode];
-//            [self.mediaView setExposurePointOfInterest:[self session].exposurePoint];
+            //            [self.mediaView setExposureMode:[self session].exposureMode];
+            //            [self.mediaView setExposurePointOfInterest:[self session].exposurePoint];
             [self.mediaView setExposureMode:AVCaptureExposureModeContinuousAutoExposure];
         }
         
@@ -459,11 +459,11 @@
             break;
     }
     self.buttonCapture.enabled = YES;
-
+    
     self.mediaTypePickerView.userInteractionEnabled = NO;
     
     __weak typeof(self) weakSelf = self;
-
+    
     [self.mediaView setBlur:YES completion:^{
         
         __strong typeof(self) strongSelf = weakSelf;
@@ -544,13 +544,13 @@
         self.mediaTypePickerView.userInteractionEnabled = NO;
         
         __weak typeof(self) weakSelf = self;
-
+        
         [self.mediaView setBlur:YES completion:^{
             
             __strong typeof(self) strongSelf = weakSelf;
-
+            
             BOOL success = [[strongSelf session] setCameraPosition:captureDevice];
-
+            
             if (success && strongSelf)
             {
                 strongSelf->_captureDevice = captureDevice;
@@ -561,7 +561,7 @@
                 NSMutableOrderedSet *set = [[NSMutableOrderedSet alloc] initWithArray:weakSelf.allowedQualityForSession];
                 [set intersectSet:[NSSet setWithArray:[[weakSelf session] supportedSessionPreset]]];
                 weakSelf.settingsContainerView.photoSettingsView.preferredPreset = weakSelf.settingsContainerView.videoSettingsView.preferredPreset = [set array];
-
+                
                 if (weakSelf.captureMode == PHAssetMediaTypeImage)
                 {
                     [weakSelf session].captureSessionPreset = [weakSelf.settingsContainerView.photoSettingsView.supportedPreset firstObject];
@@ -643,7 +643,7 @@
     if ([self session].isRecording == NO)
     {
         NSUInteger count = videoURLs.count + audioURLs.count + arrayImages.count;
-
+        
         if (self.maximumItemCount == 0 || self.maximumItemCount > count)
         {
             self.buttonCapture.isRecording = YES;
@@ -651,7 +651,7 @@
             return YES;
         }
     }
-
+    
     return NO;
 }
 
@@ -677,7 +677,7 @@
             return YES;
         }
     }
-
+    
     return NO;
 }
 
@@ -717,7 +717,7 @@
                 break;
         }
         self.buttonCapture.enabled = YES;
-
+        
         if ([[self session] isSessionRunning] == NO)
         {
             [[self session] startRunning];
@@ -883,20 +883,20 @@
 -(void)videoSettingsView:(IQVideoSettingsContainerView *)settingsView didChangeVideoPreset:(AVCaptureSessionPreset)videoPreset
 {
     __weak typeof(self) weakSelf = self;
-
+    
     [self.mediaView setBlur:YES completion:^{
-
+        
         [weakSelf session].captureSessionPreset = videoPreset;
         [weakSelf updateUI];
         [weakSelf.mediaView setBlur:NO completion:nil];
-
+        
     }];
 }
 
 -(void)photoSettingsView:(IQVideoSettingsContainerView *)settingsView didChangePhotoPreset:(AVCaptureSessionPreset)photoPreset
 {
     __weak typeof(self) weakSelf = self;
-
+    
     [self.mediaView setBlur:YES completion:^{
         [weakSelf session].captureSessionPreset = photoPreset;
         
@@ -923,12 +923,12 @@
             aspectFitSize.width = mH * sourceSize.width;
         else if( mW < mH )
             aspectFitSize.height = mW * sourceSize.height;
-
+        
         aspectFitSize.width = floor(aspectFitSize.width);
         aspectFitSize.height = floor(aspectFitSize.height);
         
         CGFloat unusedHeight = destSize.height - aspectFitSize.height;
-
+        
         if (unusedHeight > 0)
         {
             UIEdgeInsets previewInset = UIEdgeInsetsZero;
@@ -944,7 +944,7 @@
             {
                 previewInset.top = unusedHeight;
             }
-
+            
             self.mediaView.previewInset = previewInset;
         }
         else
@@ -963,7 +963,7 @@
 {
     _wasIdleTimerDisabled = [[UIApplication sharedApplication] isIdleTimerDisabled];
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
-
+    
     [UIView animateWithDuration:0.2 delay:0 options:(UIViewAnimationOptionBeginFromCurrentState) animations:^{
         
         switch (captureSession.captureMode)
@@ -981,25 +981,25 @@
                 break;
         }
     } completion:NULL];
-
+    
     [self.bottomContainerView setLeftContentView:nil];
     [self.bottomContainerView setRightContentView:nil];
     [self.bottomContainerView setTopContentView:nil];
     
     self.bottomContainerView.backgroundColor = [UIColor clearColor];
-
+    
     displayDuratioUpdate = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateDuration)];
-        [displayDuratioUpdate addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [displayDuratioUpdate addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
 -(void)captureSessionDidPauseRecording:(IQCaptureSession *)captureSession
 {
     [[UIApplication sharedApplication] setIdleTimerDisabled:_wasIdleTimerDisabled];
-
+    
     [UIView animateWithDuration:0.2 delay:0 options:(UIViewAnimationOptionBeginFromCurrentState) animations:^{
         
         self.buttonCapture.isRecording = NO;
-
+        
         switch (captureSession.captureMode)
         {
             case PHAssetMediaTypeVideo:
@@ -1014,9 +1014,9 @@
             default:
                 break;
         }
-
+        
     } completion:NULL];
-
+    
     [displayDuratioUpdate removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [displayDuratioUpdate invalidate];
     displayDuratioUpdate = nil;
@@ -1032,19 +1032,19 @@
         [videoURLs removeAllObjects];
         [audioURLs removeAllObjects];
         [arrayImages removeAllObjects];
-
+        
         [IQFileManager removeItemsAtPath:[[self class] temporaryAudioStoragePath]];
         [IQFileManager removeItemsAtPath:[[self class] temporaryVideoStoragePath]];
         [IQFileManager removeItemsAtPath:[[self class] temporaryImageStoragePath]];
     }
-
+    
     [self.bottomContainerView setLeftContentView:self.buttonCancel];
     [self.bottomContainerView setTopContentView:self.mediaTypePickerView];
     self.bottomContainerView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
     [self.bottomContainerView setRightContentView:self.buttonSelect];
     
     NSUInteger count = videoURLs.count + audioURLs.count + arrayImages.count;
-
+    
     if (error == nil)
     {
         if (self.maximumItemCount == 0 || self.maximumItemCount > count)
@@ -1123,17 +1123,17 @@
     {
         case PHAssetMediaTypeImage:
         {
-            return @"PHOTO";
+            return NSLocalizedString(@"PHOTO", @"");
         }
             break;
         case PHAssetMediaTypeVideo:
         {
-            return @"VIDEO";
+            return NSLocalizedString( @"VIDEO", @"");
         }
             break;
         case PHAssetMediaTypeAudio:
         {
-            return @"AUDIO";
+            return NSLocalizedString(@"AUDIO",@"");
         }
             break;
             

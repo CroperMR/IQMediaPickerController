@@ -181,7 +181,7 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
         
         if (preset == AVCaptureSessionPresetHigh)
         {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":@"HIGH"}];
+            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":NSLocalizedString(@"HIGH", @"")}];
         }
         else if (preset == AVCaptureSessionPresetMedium)
         {
@@ -227,7 +227,7 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
 
     if (sessionSupportedPreset.count == 0)
     {
-        [sessionSupportedPreset addObject:@{@"quality":AVCaptureSessionPresetHigh,@"name":@"HIGH"}];
+        [sessionSupportedPreset addObject:@{@"quality":AVCaptureSessionPresetHigh,@"name": NSLocalizedString(@"HIGH", @"") }];
         [supportedPreset addObject:AVCaptureSessionPresetHigh];
     }
 
