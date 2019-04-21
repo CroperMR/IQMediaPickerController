@@ -21,23 +21,28 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/NSObject.h>
-#import <AVFoundation/AVCaptureDevice.h>
+@import AVFoundation;
+@import Foundation;
 
 #import "IQMediaCaptureController.h"
 
 
-extern NSString *const IQMediaURL;          // an NSURL
-extern NSString *const IQMediaImage;        // a UIImage
-extern NSString *const IQMediaType;      // an NSString (UTI, i.e. kUTTypeImage)
-
-extern NSString *const IQMediaTypeAudio;
-extern NSString *const IQMediaTypeVideo;
-extern NSString *const IQMediaTypeImage;
+typedef NS_ENUM(NSInteger, IQCaptureSessionPreset) {
+    IQCaptureSessionPresetPhoto,    //High quality photo, full resolution
+    IQCaptureSessionPresetHigh,     //High quality video and audio
+    IQCaptureSessionPresetMedium,   //Medium quality output, suitable for sharing over Wi-Fi
+    IQCaptureSessionPresetLow,      //Low quality output, suitable for sharing over 3G
+    IQCaptureSessionPreset352x288,  //CIF quality
+    IQCaptureSessionPreset640x480,  //VGA quality
+    IQCaptureSessionPreset1280x720, //
+    IQCaptureSessionPreset1920x1080,//
+    IQCaptureSessionPreset3840x2160,//  UHD 4K
+    IQCaptureSessionPresetiFrame960x540,    //  iFrame H264 ~30 Mbits/sec, AAC audio
+    IQCaptureSessionPresetiFrame1280x720,   //  iFrame H264 ~40 Mbits/sec AAC audio
+};
 
 @protocol IQCaptureSessionDelegate;
 
-@class AVCaptureSession;
 
 @interface IQCaptureSession : NSObject
 
@@ -45,8 +50,8 @@ extern NSString *const IQMediaTypeImage;
 
 /*****Session*****/
 @property (nonnull, readonly) AVCaptureSession *captureSession; //An instance of AVCaptureSession to coordinate the data flow from the input to the output
-@property (nonnull, readonly) NSArray <AVCaptureSessionPreset> * supportedSessionPreset;
-@property AVCaptureSessionPreset captureSessionPreset;
+@property (nonnull, readonly) NSArray <NSNumber*> * supportedSessionPreset;
+@property IQCaptureSessionPreset captureSessionPreset;
 @property (readonly) CGSize presetSize;
 
 @property (readonly) BOOL isSessionRunning;
@@ -71,7 +76,7 @@ extern NSString *const IQMediaTypeImage;
 - (BOOL)isExposureModeSupported:(AVCaptureExposureMode)exposureMode;
 - (BOOL)isWhiteBalanceModeSupported:(AVCaptureWhiteBalanceMode)whiteBalanceMode;
 
-- (PHAssetMediaType)captureMode;
+- (IQMediaCaptureControllerCaptureMode)captureMode;
 + (NSArray<AVCaptureDevice*>*_Nonnull)supportedVideoCaptureDevices;
 - (AVCaptureDevicePosition)cameraPosition;
 - (AVCaptureFlashMode)flashMode;
@@ -82,7 +87,8 @@ extern NSString *const IQMediaTypeImage;
 - (CGPoint)focusPoint;
 - (CGPoint)exposurePoint;
 
-- (BOOL)setCaptureMode:(PHAssetMediaType)captureMode;
+- (void)handlePinchToZoomRecognizer:(UIPinchGestureRecognizer *)pinchRecognizer;
+- (BOOL)setCaptureMode:(IQMediaCaptureControllerCaptureMode)captureMode;
 - (BOOL)setCameraPosition:(AVCaptureDevicePosition)cameraPosition;
 - (BOOL)setFlashMode:(AVCaptureFlashMode)flashMode;
 - (BOOL)setTorchMode:(AVCaptureTorchMode)torchMode;

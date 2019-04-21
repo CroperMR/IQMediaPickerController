@@ -9,7 +9,7 @@ DEPENDENCIES:
   - IQMediaPickerController (from `.`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - DBCameraButton
     - SCSiriWaveformView
 
@@ -19,9 +19,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DBCameraButton: 969d585df804df5b413936a7bf5d77c562ca2307
-  IQMediaPickerController: 675bfff73f4089b9449a72a8c535b30a03a49604
+  IQMediaPickerController: 84aae60f85a899924e555f2566076948082e6eff
   SCSiriWaveformView: 15b9dd6f94c7536e2032b34a35c6ff74d38c7411
 
 PODFILE CHECKSUM: ac7c055ae53bbdc77707e6ec706c0c698ea6987f
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.0

@@ -22,9 +22,6 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UIImageView.h>
-#import <UIKit/UILabel.h>
-
 #import "IQAssetsAlbumViewCell.h"
 
 @implementation IQAssetsAlbumViewCell
@@ -34,30 +31,28 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
     {
-        CGRect contentRect = CGRectMake(0, 0, 320, 100);
-        self.contentView.frame = contentRect;
+        self.contentView.frame = CGRectMake(0, 0, 320, 80);
         
-        UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 80, 80)];
+        UIView *shadowView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 60, 60)];
         shadowView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
         [self.contentView addSubview:shadowView];
 
         self.imageViewAlbum = [[UIImageView alloc] initWithFrame:shadowView.bounds];
         self.imageViewAlbum.clipsToBounds = YES;
-        self.imageViewAlbum.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
         self.imageViewAlbum.contentMode = UIViewContentModeScaleAspectFill;
         self.imageViewAlbum.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         [shadowView addSubview:self.imageViewAlbum];
         
-        self.labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(95, 25, 315-75, 25)];
+        self.labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(75, 20, 315-75, 20)];
         self.labelTitle.backgroundColor = [UIColor clearColor];
-        self.labelTitle.font = [UIFont boldSystemFontOfSize:17];
+        self.labelTitle.font = [UIFont boldSystemFontOfSize:15];
         self.labelTitle.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
         [self.contentView addSubview:self.labelTitle];
         
-        self.labelSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(95, 50, 315-75, 25)];
+        self.labelSubTitle = [[UILabel alloc] initWithFrame:CGRectMake(75, 40, 315-75, 20)];
         self.labelSubTitle.textColor = [UIColor grayColor];
         self.labelSubTitle.backgroundColor = [UIColor clearColor];
-        self.labelSubTitle.font = [UIFont systemFontOfSize:16];
+        self.labelSubTitle.font = [UIFont systemFontOfSize:13];
         self.labelSubTitle.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
         [self.contentView addSubview:self.labelSubTitle];
     }

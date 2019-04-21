@@ -22,11 +22,10 @@
 //  THE SOFTWARE.
 
 
-#import <Foundation/NSString.h>
-#import <Foundation/NSDate.h>
+@import Foundation;
 
 @interface NSString (IQTimeIntervalFormatter)
 
-+(nonnull NSString*)timeStringForTimeInterval:(NSTimeInterval)timeInterval forceIncludeHours:(BOOL)forceIncludeHours;
++ (nonnull NSString *)timeStringForTimeInterval:(NSTimeInterval)timeInterval maximumDuration:(NSTimeInterval)maximumDuration forceIncludeHours:(BOOL)forceIncludeHours;
 
 @end

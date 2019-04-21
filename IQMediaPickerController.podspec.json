@@ -1,9 +1,9 @@
 {
   "name": "IQMediaPickerController",
-  "version": "2.0.0",
+  "version": "1.0.2",
   "source": {
     "git": "https://github.com/hackiftekhar/IQMediaPickerController.git",
-    "tag": "v2.0.0"
+    "tag": "v1.0.2"
   },
   "summary": "Audio Video and Image Picker Controller",
   "homepage": "https://github.com/hackiftekhar/IQMediaPickerController",
@@ -17,22 +17,23 @@
   "source_files": "IQMediaPickerController/**/*.{h,m}",
   "public_header_files": [
     "IQMediaPickerController/IQMediaPickerController.h",
-    "IQMediaPickerController/IQMediaPickerSelection.h"
+    "IQMediaPickerController/IQMediaPickerControllerConstants.h"
   ],
-  "resources": "IQMediaPickerController/**/*.{xcassets}",
+  "resources": [
+    "IQMediaPickerController/**/*.{xcassets}", 
+    "IQMediaPickerController/Localizable/*.{lproj}"
+  ],
   "dependencies": {
     "DBCameraButton": [],
     "SCSiriWaveformView": []
   },
   "frameworks": [
+      "AssetsLibrary",
       "AVFoundation",
-      "AVKit",
-      "CoreMedia",
       "CoreGraphics",
       "Foundation",
       "MediaPlayer",
       "MobileCoreServices",
-      "Photos",
       "QuartzCore",
       "UIKit"
   ],

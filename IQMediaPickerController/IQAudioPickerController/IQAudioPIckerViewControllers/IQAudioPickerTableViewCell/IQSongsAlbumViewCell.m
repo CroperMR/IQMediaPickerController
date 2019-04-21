@@ -22,10 +22,6 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UINibLoading.h>
-#import <UIKit/UIImageView.h>
-#import <UIKit/UILabel.h>
-
 #import "IQSongsAlbumViewCell.h"
 
 @implementation IQSongsAlbumViewCell

@@ -22,7 +22,8 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UIView.h>
+@import UIKit;
+@import AVFoundation;
 
 #import "IQCaptureSession.h"
 
@@ -32,7 +33,7 @@
 
 -(void)videoSettingsView:(IQVideoSettingsContainerView*)settingsView didChangeTorchMode:(AVCaptureTorchMode)torchMode;
 -(void)videoSettingsViewFlippedCamera:(IQVideoSettingsContainerView*)settingsView;
--(void)videoSettingsView:(IQVideoSettingsContainerView*)settingsView didChangeVideoPreset:(AVCaptureSessionPreset)videoPreset;
+-(void)videoSettingsView:(IQVideoSettingsContainerView*)settingsView didChangeVideoPreset:(IQCaptureSessionPreset)videoPreset;
 
 @end
 
@@ -40,10 +41,10 @@
 
 @property(nonatomic, weak) id<IQVideoSettingsContainerViewDelegate> delegate;
 
-@property(nonatomic) AVCaptureSessionPreset videoPreset;
+@property(nonatomic) IQCaptureSessionPreset videoPreset;
 
-@property(nonatomic) NSArray <AVCaptureSessionPreset>* preferredPreset;
-@property(nonatomic, readonly) NSArray <AVCaptureSessionPreset>* supportedPreset;
+@property(nonatomic) NSArray <NSNumber*>* preferredPreset;
+@property(nonatomic, readonly) NSArray <NSNumber*>* supportedPreset;
 
 @property(nonatomic) AVCaptureTorchMode torchMode;
 @property(nonatomic) BOOL hasTorch;
@@ -51,6 +52,7 @@
 @property(nonatomic) BOOL hasCamera;
 
 @property(nonatomic) NSTimeInterval duration;
+@property(nonatomic) NSTimeInterval maximumDuration;
 @property(nonatomic) long long fileSize;
 
 @property(nonatomic) BOOL recording;

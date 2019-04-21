@@ -22,21 +22,14 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UINavigationController.h>
-#import <UIKit/UINavigationItem.h>
-#import <UIKit/UIBarButtonItem.h>
-#import <UIKit/UITabBarItem.h>
-#import <UIKit/UILabel.h>
-#import <UIKit/UIImageView.h>
-#import <MediaPlayer/MPMediaItemCollection.h>
-#import <MediaPlayer/MPMediaQuery.h>
+@import MediaPlayer;
 
 #import "IQSongsAlbumListViewController.h"
 #import "IQAudioPickerUtility.h"
 #import "IQSongsListViewController.h"
 #import "IQSongsAlbumViewCell.h"
 #import "IQAudioPickerController.h"
-#import "UIImage+IQMediaPickerController.h"
+#import "IQMediaPickerControllerConstants.h"
 
 @interface IQSongsAlbumListViewController ()
 
@@ -47,15 +40,15 @@
 
 @implementation IQSongsAlbumListViewController
 {
-    NSArray<MPMediaItemCollection *> *collections;
+    NSArray *collections;
 }
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.title = @"Albums";
-        self.tabBarItem.image = [UIImage imageInsideMediaPickerBundleNamed:@"albums"];
+        self.title = NSLocalizedStringFromTableInBundle(@"Albums", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"");
+        self.tabBarItem.image = [UIImage imageNamed:@"albums" inBundle:[NSBundle bundleWithIdentifier:BundleIdentifier] compatibleWithTraitCollection:nil];
     }
     return self;
 }
@@ -70,15 +63,15 @@
     MPMediaQuery *query = [MPMediaQuery albumsQuery];
     collections = [query collections];
 
-    UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleDone target:self action:@selector(cancelAction:)];
+    UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"Cancel", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"") style:UIBarButtonItemStyleDone target:self action:@selector(cancelAction:)];
     self.navigationItem.leftBarButtonItem = cancelItem;
 
-    self.doneBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneAction:)];
+    self.doneBarButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"Done", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"") style:UIBarButtonItemStyleDone target:self action:@selector(doneAction:)];
 
     UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
     self.selectedMediaCountItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.selectedMediaCountItem.possibleTitles = [NSSet setWithObject:@"999 media selected"];
+    self.selectedMediaCountItem.possibleTitles = [NSSet setWithObject:NSLocalizedStringFromTableInBundle(@"999 media selected", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"")];
     self.selectedMediaCountItem.enabled = NO;
     
     self.toolbarItems = @[flexItem,self.selectedMediaCountItem,flexItem];
@@ -88,29 +81,30 @@
 {
     [super viewWillAppear:animated];
 
-    [self updateSelectedCountAnimated:animated];
+    [self updateSelectedCount];
 }
 
--(void)updateSelectedCountAnimated:(BOOL)animated
+-(void)updateSelectedCount
 {
     if ([self.audioPickerController.selectedItems count])
     {
-        [self.navigationItem setRightBarButtonItem:self.doneBarButton animated:animated];
-        [self.navigationController setToolbarHidden:NO animated:animated];
+        [self.navigationItem setRightBarButtonItem:self.doneBarButton animated:YES];
         
-        NSString *finalText = [NSString stringWithFormat:@"%lu Media selected",(unsigned long)[self.audioPickerController.selectedItems count]];
+        [self.navigationController setToolbarHidden:NO animated:YES];
+        
+        NSString *finalText = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%lu Media selected", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @""), (unsigned long)[self.audioPickerController.selectedItems count]];
         
         if (self.audioPickerController.maximumItemCount > 0)
         {
-            finalText = [finalText stringByAppendingFormat:@" (%lu maximum) ",(unsigned long)self.audioPickerController.maximumItemCount];
+            finalText = [finalText stringByAppendingFormat:@" (%@) ", [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"%lu maximum", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @""), (unsigned long)self.audioPickerController.maximumItemCount]];
         }
         
         self.selectedMediaCountItem.title = finalText;
     }
     else
     {
-        [self.navigationItem setRightBarButtonItem:nil animated:animated];
-        [self.navigationController setToolbarHidden:YES animated:animated];
+        [self.navigationItem setRightBarButtonItem:nil animated:YES];
+        [self.navigationController setToolbarHidden:YES animated:YES];
         self.selectedMediaCountItem.title = nil;
     }
 }
@@ -119,7 +113,16 @@
 {
     if ([self.audioPickerController.delegate respondsToSelector:@selector(audioPickerController:didPickMediaItems:)])
     {
-        [self.audioPickerController.delegate audioPickerController:self.audioPickerController didPickMediaItems:self.audioPickerController.selectedItems];
+        NSMutableArray *items = [[NSMutableArray alloc] init];
+        
+        for (MPMediaItem *item in self.audioPickerController.selectedItems)
+        {
+            NSDictionary *dict = [NSDictionary dictionaryWithObject:item forKey:IQMediaItem];
+            
+            [items addObject:dict];
+        }
+        
+        [self.audioPickerController.delegate audioPickerController:self.audioPickerController didPickMediaItems:items];
     }
     
     [self.audioPickerController dismissViewControllerAnimated:YES completion:nil];
@@ -155,12 +158,12 @@
     
     if (item.items.count == 0)
     {
-        cell.labelSubSubTitle.text = [NSString stringWithFormat:@"no songs"];
+        cell.labelSubSubTitle.text = [NSString stringWithFormat:NSLocalizedStringFromTableInBundle(@"no songs", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"")];
     }
     else
     {
         NSUInteger totalMinutes = [IQAudioPickerUtility mediaCollectionDuration:item];
-        cell.labelSubSubTitle.text = [NSString stringWithFormat:@"%lu %@, %lu %@",(unsigned long)item.count,(item.count>1?@"songs":@"song"),(unsigned long)totalMinutes,(totalMinutes>1?@"mins":@"min")];
+        cell.labelSubSubTitle.text = [NSString stringWithFormat:@"%lu %@, %lu %@",(unsigned long)item.count,(item.count > 1 ? NSLocalizedStringFromTableInBundle(@"songs", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"") : NSLocalizedStringFromTableInBundle(@"song", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"")), (unsigned long)totalMinutes, (totalMinutes > 1 ? NSLocalizedStringFromTableInBundle(@"mins", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"") : NSLocalizedStringFromTableInBundle(@"min", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @""))];
     }
 
     return cell;
@@ -168,8 +171,6 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
     IQSongsListViewController *controller = [[IQSongsListViewController alloc] init];
     controller.audioPickerController = self.audioPickerController;
     controller.collections = @[[collections objectAtIndex:indexPath.row]];

@@ -75,15 +75,15 @@
 
         if (self.mediaTypes.count == 0)
         {
-            self.mediaTypes = @[@(PHAssetMediaTypeImage)];
+            self.mediaTypes = @[@(IQMediaPickerControllerMediaTypePhoto)];
         }
         
         switch (self.sourceType)
         {
             case IQMediaPickerControllerSourceTypeLibrary:
             {
-                if ([self.mediaTypes containsObject:@(PHAssetMediaTypeImage)] ||
-                    [self.mediaTypes containsObject:@(PHAssetMediaTypeVideo)])
+                if ([self.mediaTypes containsObject:@(IQMediaPickerControllerMediaTypePhoto)] ||
+                    [self.mediaTypes containsObject:@(IQMediaPickerControllerMediaTypeVideo)])
                 {
                     IQAssetsPickerController *controller = [[IQAssetsPickerController alloc] init];
                     controller.allowsPickingMultipleItems = self.allowsPickingMultipleItems;
@@ -92,7 +92,7 @@
                     controller.mediaTypes = self.mediaTypes;
                     self.viewControllers = @[controller];
                 }
-                else if ([self.mediaTypes containsObject:@(PHAssetMediaTypeAudio)])
+                else if ([self.mediaTypes containsObject:@(IQMediaPickerControllerMediaTypeAudio)])
                 {
                     IQAudioPickerController *controller = [[IQAudioPickerController alloc] init];
                     controller.allowsPickingMultipleItems = self.allowsPickingMultipleItems;
@@ -208,12 +208,12 @@
         switch (sourceType) {
             case IQMediaPickerControllerSourceTypeLibrary:
             {
-                return @[@(PHAssetMediaTypeAudio),@(PHAssetMediaTypeImage),@(PHAssetMediaTypeVideo)];
+                return @[@(IQMediaPickerControllerMediaTypeAudio),@(IQMediaPickerControllerMediaTypePhoto),@(IQMediaPickerControllerMediaTypeVideo)];
             }
                 break;
             case IQMediaPickerControllerSourceTypeCameraMicrophone:
             {
-                return @[@(PHAssetMediaTypeAudio),@(PHAssetMediaTypeImage),@(PHAssetMediaTypeVideo)];
+                return @[@(IQMediaPickerControllerMediaTypeAudio),@(IQMediaPickerControllerMediaTypePhoto),@(IQMediaPickerControllerMediaTypeVideo)];
             }
                 break;
         }
@@ -222,13 +222,18 @@
     return @[];
 }
 
-+ (BOOL)isCameraDeviceAvailable:(AVCaptureDevicePosition)cameraDevice
++ (BOOL)isCameraDeviceAvailable:(IQMediaPickerControllerCameraDevice)cameraDevice
 {
     BOOL isCameraDeviceAvailable = NO;
     
     for (AVCaptureDevice *device in [IQCaptureSession supportedVideoCaptureDevices])
     {
-        if (device.position == cameraDevice)
+        if (cameraDevice == IQMediaPickerControllerCameraDeviceRear && device.position == AVCaptureDevicePositionBack)
+        {
+            isCameraDeviceAvailable = YES;
+            break;
+        }
+        else if (cameraDevice == IQMediaPickerControllerCameraDeviceFront && device.position == AVCaptureDevicePositionFront)
         {
             isCameraDeviceAvailable = YES;
             break;
@@ -238,13 +243,18 @@
     return isCameraDeviceAvailable;
 }
 
-+ (BOOL)isFlashAvailableForCameraDevice:(AVCaptureDevicePosition)cameraDevice
++ (BOOL)isFlashAvailableForCameraDevice:(IQMediaPickerControllerCameraDevice)cameraDevice
 {
     BOOL hasFlash = NO;
     
     for (AVCaptureDevice *device in [IQCaptureSession supportedVideoCaptureDevices])
     {
-        if (device.position == cameraDevice)
+        if (cameraDevice == IQMediaPickerControllerCameraDeviceRear && device.position == AVCaptureDevicePositionBack)
+        {
+            hasFlash = device.hasFlash;
+            break;
+        }
+        else if (cameraDevice == IQMediaPickerControllerCameraDeviceFront && device.position == AVCaptureDevicePositionFront)
         {
             hasFlash = device.hasFlash;
             break;
@@ -286,11 +296,11 @@
 }
 
 #pragma mark - IQMediaCaptureControllerDelegate
-- (void)mediaCaptureController:(IQMediaCaptureController*)controller didFinishMedias:(IQMediaPickerSelection *_Nonnull)selection
+- (void)mediaCaptureController:(IQMediaCaptureController*)controller didFinishMediaWithInfo:(NSDictionary *)info
 {
-    if ([self.delegate respondsToSelector:@selector(mediaPickerController:didFinishMedias:)])
+    if ([self.delegate respondsToSelector:@selector(mediaPickerController:didFinishMediaWithInfo:)])
     {
-        [self.delegate mediaPickerController:self didFinishMedias:selection];
+        [self.delegate mediaPickerController:self didFinishMediaWithInfo:info];
     }
 }
 
@@ -303,14 +313,11 @@
 }
 
 #pragma mark - IQAssetsPickerControllerDelegate
--(void)assetsPickerController:(IQAssetsPickerController *)controller didPickAssets:(NSArray<PHAsset *> *)assets
+- (void)assetsPickerController:(IQAssetsPickerController*)controller didFinishMediaWithInfo:(NSDictionary *)info
 {
-    if ([self.delegate respondsToSelector:@selector(mediaPickerController:didFinishMedias:)])
+    if ([self.delegate respondsToSelector:@selector(mediaPickerController:didFinishMediaWithInfo:)])
     {
-        IQMediaPickerSelection *selection = [[IQMediaPickerSelection alloc] init];
-        [selection addAssets:assets];
-        
-        [self.delegate mediaPickerController:self didFinishMedias:selection];
+        [self.delegate mediaPickerController:self didFinishMediaWithInfo:info];
     }
 }
 
@@ -323,14 +330,13 @@
 }
 
 #pragma mark - IQAudioPickerControllerDelegate
-- (void)audioPickerController:(IQAudioPickerController *)mediaPicker didPickMediaItems:(NSArray<MPMediaItem*>*)mediaItems
+- (void)audioPickerController:(IQAudioPickerController *)mediaPicker didPickMediaItems:(NSArray*)mediaItems
 {
-    if ([self.delegate respondsToSelector:@selector(mediaPickerController:didFinishMedias:)])
+    if ([self.delegate respondsToSelector:@selector(mediaPickerController:didFinishMediaWithInfo:)])
     {
-        IQMediaPickerSelection *selection = [[IQMediaPickerSelection alloc] init];
-        [selection addAudios:mediaItems];
-
-        [self.delegate mediaPickerController:self didFinishMedias:selection];
+        NSDictionary *info = [NSDictionary dictionaryWithObject:mediaItems forKey:IQMediaTypeAudio];
+        
+        [self.delegate mediaPickerController:self didFinishMediaWithInfo:info];
     }
 }
 

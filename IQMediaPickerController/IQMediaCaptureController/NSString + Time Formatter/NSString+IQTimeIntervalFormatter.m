@@ -26,22 +26,26 @@
 
 @implementation NSString (IQTimeIntervalFormatter)
 
-+(nonnull NSString*)timeStringForTimeInterval:(NSTimeInterval)timeInterval forceIncludeHours:(BOOL)forceIncludeHours
++ (nonnull NSString *)timeStringForTimeInterval:(NSTimeInterval)timeInterval maximumDuration:(NSTimeInterval)maximumDuration forceIncludeHours:(BOOL)forceIncludeHours
 {
     NSInteger ti = (NSInteger)timeInterval;
     long seconds = ti % 60;
     long minutes = (ti / 60) % 60;
     long hours = (ti / 3600);
     
+    NSInteger md = (NSInteger)maximumDuration;
+    long mdSeconds = md % 60;
+    long mdMinutes = (md / 60) % 60;
+    long mdHours = (md / 3600);
+    
     if (forceIncludeHours || hours > 0)
     {
-        return [NSString stringWithFormat:@"%02li:%02li:%02li", hours, minutes, seconds];
+        return md ? [NSString stringWithFormat:@"%02li:%02li:%02li/%02li:%02li:%02li", hours, minutes, seconds, mdHours, mdMinutes, mdSeconds] : [NSString stringWithFormat:@"%02li:%02li:%02li", hours, minutes, seconds];
     }
     else
     {
-        return [NSString stringWithFormat:@"%02li:%02li", minutes, seconds];
+        return md ? [NSString stringWithFormat:@"%02li:%02li/%02li:%02li", minutes, seconds, mdMinutes, mdSeconds] : [NSString stringWithFormat:@"%02li:%02li", minutes, seconds];
     }
-    
 }
 
 @end

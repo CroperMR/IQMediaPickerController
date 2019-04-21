@@ -11,10 +11,7 @@
 		4C8EA1BD1F1A8C7B00026A35 /* PhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EA1B91F1A8C7B00026A35 /* PhotoTableViewCell.m */; };
 		4C8EA1BE1F1A8C7B00026A35 /* VideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8EA1BB1F1A8C7B00026A35 /* VideoTableViewCell.m */; };
 		4C99E3181F13F75300CE757D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C99E3171F13F75300CE757D /* Launch Screen.storyboard */; };
-		4CF11B6F2105E08300BA4896 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF11B6E2105E08300BA4896 /* MediaPlayer.framework */; };
-		4CF11B712105E08F00BA4896 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF11B702105E08F00BA4896 /* AVFoundation.framework */; };
-		4CF11B732105E09900BA4896 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF11B722105E09900BA4896 /* AVKit.framework */; };
-		4CF11B752105EB1600BA4896 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF11B742105EB1600BA4896 /* Photos.framework */; };
+		78A3A7CB226CF91D00FDAF73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A3A7CD226CF91D00FDAF73 /* Localizable.strings */; };
 		B2581E502BC3BCAA8A65AD07 /* Pods_MediaPickerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E67E610E47B1FE4FA6B4C5 /* Pods_MediaPickerController.framework */; };
 		C035C21F19A8B5BE0072C2C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C035C21E19A8B5BE0072C2C0 /* Foundation.framework */; };
 		C035C22119A8B5BE0072C2C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C035C22019A8B5BE0072C2C0 /* CoreGraphics.framework */; };
@@ -49,11 +46,25 @@
 		4C8EA1BA1F1A8C7B00026A35 /* VideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTableViewCell.h; sourceTree = "<group>"; };
 		4C8EA1BB1F1A8C7B00026A35 /* VideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTableViewCell.m; sourceTree = "<group>"; };
 		4C99E3171F13F75300CE757D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		4CF11B6E2105E08300BA4896 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		4CF11B702105E08F00BA4896 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		4CF11B722105E09900BA4896 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		4CF11B742105EB1600BA4896 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		58ECD05A51500ACC7B77A440 /* Pods-MediaPickerController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaPickerController.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaPickerController/Pods-MediaPickerController.release.xcconfig"; sourceTree = "<group>"; };
+		78A3A7C9226CF7AF00FDAF73 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		78A3A7CC226CF91D00FDAF73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78A3A7CE226CF92200FDAF73 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78A3A7CF226CF92500FDAF73 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		78A3A7D0226CF92700FDAF73 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78A3A7D1226CF92900FDAF73 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78A3A7D2226CF9D400FDAF73 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78A3A7D3226CF9D400FDAF73 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78A3A7D4226CFE0200FDAF73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		78A3A7D5226CFE0200FDAF73 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		78A3A7D6226CFE0C00FDAF73 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		78A3A7D7226CFE0C00FDAF73 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		78A3A7D8226CFE2F00FDAF73 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78A3A7D9226CFE2F00FDAF73 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78A3A7DA226CFE5200FDAF73 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		78A3A7DB226CFE5200FDAF73 /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		78A3A7DC226CFE6300FDAF73 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78A3A7DD226CFE6300FDAF73 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B425FEFB6305D1DCA05474C9 /* Pods-MediaPickerController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaPickerController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaPickerController/Pods-MediaPickerController.debug.xcconfig"; sourceTree = "<group>"; };
 		C035C21B19A8B5BE0072C2C0 /* MediaPickerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaPickerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C035C21E19A8B5BE0072C2C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -65,11 +76,15 @@
 		C035C22C19A8B5BE0072C2C0 /* MediaPickerController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MediaPickerController-Prefix.pch"; sourceTree = "<group>"; };
 		C035C22D19A8B5BE0072C2C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C035C22E19A8B5BE0072C2C0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C035C23119A8B5BE0072C2C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		C035C23619A8B5BE0072C2C0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C035C23719A8B5BE0072C2C0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C035C23919A8B5BE0072C2C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C035C24019A8B5BE0072C2C0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E9E46AD8208216CA0070332A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9E46ADA208217320070332A /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		E9E46ADC2082173A0070332A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9E46ADE208217410070332A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9ED51DE207F983400947E01 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF11B752105EB1600BA4896 /* Photos.framework in Frameworks */,
-				4CF11B732105E09900BA4896 /* AVKit.framework in Frameworks */,
-				4CF11B712105E08F00BA4896 /* AVFoundation.framework in Frameworks */,
-				4CF11B6F2105E08300BA4896 /* MediaPlayer.framework in Frameworks */,
 				C035C22119A8B5BE0072C2C0 /* CoreGraphics.framework in Frameworks */,
 				C035C22319A8B5BE0072C2C0 /* UIKit.framework in Frameworks */,
 				C035C21F19A8B5BE0072C2C0 /* Foundation.framework in Frameworks */,
@@ -121,10 +132,7 @@
 		C035C21D19A8B5BE0072C2C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4CF11B742105EB1600BA4896 /* Photos.framework */,
-				4CF11B722105E09900BA4896 /* AVKit.framework */,
-				4CF11B702105E08F00BA4896 /* AVFoundation.framework */,
-				4CF11B6E2105E08300BA4896 /* MediaPlayer.framework */,
+				E9ED51DE207F983400947E01 /* AVKit.framework */,
 				C035C21E19A8B5BE0072C2C0 /* Foundation.framework */,
 				C035C22019A8B5BE0072C2C0 /* CoreGraphics.framework */,
 				C035C22219A8B5BE0072C2C0 /* UIKit.framework */,
@@ -158,9 +166,10 @@
 		C035C22519A8B5BE0072C2C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C035C22619A8B5BE0072C2C0 /* MediaPickerController-Info.plist */,
+				78A3A7CD226CF91D00FDAF73 /* Localizable.strings */,
 				C035C22719A8B5BE0072C2C0 /* InfoPlist.strings */,
 				C035C22A19A8B5BE0072C2C0 /* main.m */,
+				C035C22619A8B5BE0072C2C0 /* MediaPickerController-Info.plist */,
 				C035C22C19A8B5BE0072C2C0 /* MediaPickerController-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -195,11 +204,11 @@
 		C035C21319A8B5BE0072C2C0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Iftekhar;
 				TargetAttributes = {
 					C035C21A19A8B5BE0072C2C0 = {
-						DevelopmentTeam = 7UUTF6T5P9;
+						DevelopmentTeam = HP2Z75J9N2;
 					};
 				};
 			};
@@ -209,7 +218,16 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ja,
+				"fr-CA",
+				ko,
+				es,
+				de,
+				"zh-Hans",
+				"zh-Hant",
+				fr,
+				"es-MX",
+				it,
 			);
 			mainGroup = C035C21219A8B5BE0072C2C0;
 			productRefGroup = C035C21C19A8B5BE0072C2C0 /* Products */;
@@ -226,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78A3A7CB226CF91D00FDAF73 /* Localizable.strings in Resources */,
 				4C99E3181F13F75300CE757D /* Launch Screen.storyboard in Resources */,
 				C035C23A19A8B5BE0072C2C0 /* Images.xcassets in Resources */,
 				C035C23219A8B5BE0072C2C0 /* Main_iPhone.storyboard in Resources */,
@@ -295,10 +314,39 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		78A3A7CD226CF91D00FDAF73 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78A3A7CC226CF91D00FDAF73 /* en */,
+				78A3A7CE226CF92200FDAF73 /* ja */,
+				78A3A7CF226CF92500FDAF73 /* fr-CA */,
+				78A3A7D0226CF92700FDAF73 /* ko */,
+				78A3A7D1226CF92900FDAF73 /* es */,
+				78A3A7D2226CF9D400FDAF73 /* de */,
+				78A3A7D4226CFE0200FDAF73 /* zh-Hans */,
+				78A3A7D6226CFE0C00FDAF73 /* zh-Hant */,
+				78A3A7D8226CFE2F00FDAF73 /* fr */,
+				78A3A7DA226CFE5200FDAF73 /* es-MX */,
+				78A3A7DC226CFE6300FDAF73 /* it */,
+			);
+			name = Localizable.strings;
+			path = ../IQMediaPickerController/Localizable;
+			sourceTree = "<group>";
+		};
 		C035C22719A8B5BE0072C2C0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C035C22819A8B5BE0072C2C0 /* en */,
+				E9E46AD8208216CA0070332A /* ja */,
+				E9E46ADA208217320070332A /* fr-CA */,
+				E9E46ADC2082173A0070332A /* ko */,
+				E9E46ADE208217410070332A /* es */,
+				78A3A7D3226CF9D400FDAF73 /* de */,
+				78A3A7D5226CFE0200FDAF73 /* zh-Hans */,
+				78A3A7D7226CFE0C00FDAF73 /* zh-Hant */,
+				78A3A7D9226CFE2F00FDAF73 /* fr */,
+				78A3A7DB226CFE5200FDAF73 /* es-MX */,
+				78A3A7DD226CFE6300FDAF73 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -306,7 +354,7 @@
 		C035C23019A8B5BE0072C2C0 /* Main_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C035C23119A8B5BE0072C2C0 /* Base */,
+				78A3A7C9226CF7AF00FDAF73 /* es */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -318,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -360,7 +409,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -371,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -406,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -418,8 +468,7 @@
 			baseConfigurationReference = B425FEFB6305D1DCA05474C9 /* Pods-MediaPickerController.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_MODULES_AUTOLINK = NO;
-				DEVELOPMENT_TEAM = 7UUTF6T5P9;
+				DEVELOPMENT_TEAM = HP2Z75J9N2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaPickerController/MediaPickerController-Prefix.pch";
 				INFOPLIST_FILE = "MediaPickerController/MediaPickerController-Info.plist";
@@ -437,8 +486,7 @@
 			baseConfigurationReference = 58ECD05A51500ACC7B77A440 /* Pods-MediaPickerController.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_MODULES_AUTOLINK = NO;
-				DEVELOPMENT_TEAM = 7UUTF6T5P9;
+				DEVELOPMENT_TEAM = HP2Z75J9N2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediaPickerController/MediaPickerController-Prefix.pch";
 				INFOPLIST_FILE = "MediaPickerController/MediaPickerController-Info.plist";

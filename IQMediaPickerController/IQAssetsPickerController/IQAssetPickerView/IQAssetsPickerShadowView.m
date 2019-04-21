@@ -22,9 +22,6 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UINibLoading.h>
-#import <UIKit/UIBezierPath.h>
-
 #import "IQAssetsPickerShadowView.h"
 
 @implementation IQAssetsPickerShadowView
@@ -32,7 +29,7 @@
 -(void)initialize
 {
     self.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.layer.shadowOpacity = 0.8f;
+    self.layer.shadowOpacity = 0.8;
     self.layer.shadowOffset = CGSizeMake(0, 1);
     self.layer.shadowRadius = 1;
 }

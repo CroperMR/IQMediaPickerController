@@ -22,13 +22,11 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UILabel.h>
-#import <UIKit/UIImageView.h>
-#import <AVFoundation/AVAsset.h>
+@import AVFoundation;
 
 #import "IQSelectedMediaAudioCell.h"
 #import "NSString+IQTimeIntervalFormatter.h"
-#import "UIImage+IQMediaPickerController.h"
+#import "IQMediaPickerControllerConstants.h"
 
 @interface IQSelectedMediaAudioCell ()
 
@@ -52,7 +50,7 @@
         self.imageViewPreview.contentMode = UIViewContentModeScaleAspectFill;
         [self.contentView addSubview:self.imageViewPreview];
 
-        self.imageViewPlay = [[UIImageView alloc] initWithImage:[[UIImage imageInsideMediaPickerBundleNamed:@"IQ_control_audio_play"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        self.imageViewPlay = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"IQ_control_audio_play" inBundle:[NSBundle bundleWithIdentifier:BundleIdentifier] compatibleWithTraitCollection:nil] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         self.imageViewPlay.tintColor = [UIColor whiteColor];
         self.imageViewPlay.layer.shadowColor = [UIColor blackColor].CGColor;
         self.imageViewPlay.layer.shadowOffset = CGSizeZero;
@@ -124,7 +122,7 @@
     {
         NSTimeInterval durationInSeconds = CMTimeGetSeconds(asset.duration);
 
-        self.labelDuration.text = [NSString stringWithFormat:@"  %@",[NSString timeStringForTimeInterval:durationInSeconds forceIncludeHours:NO]];
+        self.labelDuration.text = [NSString stringWithFormat:@"  %@",[NSString timeStringForTimeInterval:durationInSeconds maximumDuration:0 forceIncludeHours:NO]];
     }
     else
     {

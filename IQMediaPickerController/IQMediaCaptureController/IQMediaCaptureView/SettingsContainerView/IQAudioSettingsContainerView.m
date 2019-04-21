@@ -22,10 +22,6 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UITableViewCell.h>
-#import <UIKit/UIImageView.h>
-#import <UIKit/UILabel.h>
-
 #import "IQAudioSettingsContainerView.h"
 #import "NSString+IQTimeIntervalFormatter.h"
 
@@ -57,7 +53,7 @@
 -(void)setDuration:(NSTimeInterval)duration
 {
     _duration = duration;
-    _labelDuration.text = [NSString timeStringForTimeInterval:duration forceIncludeHours:YES];
+    _labelDuration.text = [NSString timeStringForTimeInterval:duration maximumDuration:0 forceIncludeHours:YES];
 }
 
 -(void)resetUI

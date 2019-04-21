@@ -22,7 +22,7 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UICollectionViewCell.h>
+@import UIKit;
 
 @interface IQSelectedMediaAudioCell : UICollectionViewCell
 

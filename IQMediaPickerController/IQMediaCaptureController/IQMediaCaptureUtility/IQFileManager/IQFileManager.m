@@ -22,9 +22,7 @@
 //  THE SOFTWARE.
 
 
-#import <AVFoundation/AVAssetExportSession.h>
-#import <AVFoundation/AVComposition.h>
-#import <AVFoundation/AVAsset.h>
+@import AVFoundation;
 
 #import "IQFileManager.h"
 
@@ -40,10 +38,10 @@
     return NSTemporaryDirectory();
 }
 
-+ (NSArray<NSString *>*)filesAtPath:(NSString*)path
++ (NSArray*)filesAtPath:(NSString*)path
 {
-    NSArray<NSString *> *items = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:NULL];
-    NSMutableArray<NSString *> *retVal = [NSMutableArray new];
+    NSArray *items = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:NULL];
+    NSMutableArray *retVal = [NSMutableArray new];
     for (NSString *str in items)
     {
         [retVal addObject:[NSString stringWithFormat:@"%@/%@", path, str]];
@@ -59,27 +57,27 @@
     return time;
 }
 
-+ (NSArray<NSNumber*>*)durationsOfFilesAtPath:(NSString*)path;
++ (NSArray*)durationsOfFilesAtPath:(NSString*)path;
 {
-    NSArray<NSString *> *items = [self filesAtPath:path];
+    NSArray *items = [self filesAtPath:path];
     
-    NSMutableArray<NSNumber*> *durations = [[NSMutableArray alloc] init];
+    NSMutableArray *durations = [[NSMutableArray alloc] init];
     
     for (NSString *path in items)
     {
-        [durations addObject:[NSNumber numberWithDouble:[[self class] durationOfFileAtPath:path]]];
+        [durations addObject:[NSNumber numberWithFloat:[[self class] durationOfFileAtPath:path]]];
     }
     
     return durations;
 }
 
-+ (NSArray<NSNumber*>*)durationsOfMediaURLs:(NSArray<NSURL*>*)URLs
++ (NSArray*)durationsOfMediaURLs:(NSArray*)URLs
 {
-    NSMutableArray<NSNumber*> *durations = [[NSMutableArray alloc] init];
+    NSMutableArray *durations = [[NSMutableArray alloc] init];
     
     for (NSURL *url in URLs)
     {
-        [durations addObject:[NSNumber numberWithDouble:[[self class] durationOfFileAtPath:url.relativePath]]];
+        [durations addObject:[NSNumber numberWithFloat:[[self class] durationOfFileAtPath:url.relativePath]]];
     }
     
     return durations;
@@ -90,7 +88,7 @@
 {
     [self removeItemAtPath:toPath];
     
-    NSArray<NSString*> *itemsToMerge = [self filesAtPath:fromPath];
+    NSArray *itemsToMerge = [self filesAtPath:fromPath];
     
     if (itemsToMerge.count == 0)
     {
@@ -176,7 +174,7 @@
 
 + (void)removeItemsAtPath:(NSString*)path;
 {
-    NSArray<NSString*> *items = [self filesAtPath:path];
+    NSArray *items = [self filesAtPath:path];
     for (NSString *str in items)
     {
         [self removeItemAtPath:str];

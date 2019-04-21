@@ -22,7 +22,7 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UITableViewCell.h>
+@import UIKit;
 
 @interface IQAssetsAlbumViewCell : UITableViewCell
 

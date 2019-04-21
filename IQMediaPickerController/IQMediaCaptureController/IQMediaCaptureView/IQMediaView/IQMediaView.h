@@ -22,13 +22,12 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UIView.h>
-#import <UIKit/UISwipeGestureRecognizer.h>
-#import <AVFoundation/AVCaptureDevice.h>
+@import UIKit;
+@import AVFoundation;
 
 #import "IQMediaCaptureController.h"
 
-@class IQMediaView, AVCaptureSession, AVCaptureVideoPreviewLayer;
+@class IQMediaView;
 
 @protocol IQMediaViewDelegate <NSObject>
 
@@ -55,7 +54,7 @@
 @property (nonatomic) CGPoint focusPointOfInterest;
 @property (nonatomic) CGPoint exposurePointOfInterest;
 
-@property (nonatomic) PHAssetMediaType captureMode;
+@property (nonatomic) IQMediaCaptureControllerCaptureMode captureMode;
 
 @property(nonatomic) BOOL recording;
 

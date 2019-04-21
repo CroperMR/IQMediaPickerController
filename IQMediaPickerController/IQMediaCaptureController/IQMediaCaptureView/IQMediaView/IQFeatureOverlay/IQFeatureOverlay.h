@@ -22,7 +22,7 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UIImageView.h>
+@import UIKit;
 
 @class IQFeatureOverlay;
 

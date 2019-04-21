@@ -22,8 +22,6 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UINavigationController.h>
-
 #import "IQAudioPickerController.h"
 #import "IQSongsPlaylistViewController.h"
 #import "IQSongsArtistListViewController.h"

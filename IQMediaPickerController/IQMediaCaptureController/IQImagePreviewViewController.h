@@ -22,7 +22,7 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UIViewController.h>
+@import UIKit;
 
 @interface IQImagePreviewViewController : UIViewController
 

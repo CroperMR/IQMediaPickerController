@@ -22,8 +22,6 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UIGraphics.h>
-
 #import "IQCheckmarkView.h"
 
 @implementation IQCheckmarkView

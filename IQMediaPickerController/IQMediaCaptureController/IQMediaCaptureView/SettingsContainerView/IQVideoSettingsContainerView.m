@@ -22,12 +22,9 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UIButton.h>
-
 #import "IQVideoSettingsContainerView.h"
-#import "IQAKPickerView.h"
 #import "NSString+IQTimeIntervalFormatter.h"
-#import "UIImage+IQMediaPickerController.h"
+#import "IQAKPickerView.h"
 
 typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
     IQVideoSettingsTypeDefault,
@@ -74,7 +71,7 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
             _buttonFlashAuto.alpha = 0;
             _buttonFlashAuto.titleLabel.font = [UIFont systemFontOfSize:12];
             _buttonFlashAuto.tintColor = [UIColor whiteColor];
-            [_buttonFlashAuto setTitle:@"Auto" forState:UIControlStateNormal];
+            [_buttonFlashAuto setTitle:NSLocalizedStringFromTableInBundle(@"Auto", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"") forState:UIControlStateNormal];
             _buttonFlashAuto.frame = _buttonFlash.frame;
             [_buttonFlashAuto sizeToFit];
             CGRect rect = _buttonFlashAuto.frame;
@@ -88,7 +85,7 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
             _buttonFlashOn.alpha = 0;
             _buttonFlashOn.titleLabel.font = [UIFont systemFontOfSize:12];
             _buttonFlashOn.tintColor = [UIColor whiteColor];
-            [_buttonFlashOn setTitle:@"On" forState:UIControlStateNormal];
+            [_buttonFlashOn setTitle:NSLocalizedStringFromTableInBundle(@"On", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"") forState:UIControlStateNormal];
             _buttonFlashOn.frame = _buttonFlash.frame;
             [_buttonFlashOn sizeToFit];
             rect = _buttonFlashOn.frame;
@@ -102,7 +99,7 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
             _buttonFlashOff.alpha = 0;
             _buttonFlashOff.titleLabel.font = [UIFont systemFontOfSize:12];
             _buttonFlashOff.tintColor = [UIColor whiteColor];
-            [_buttonFlashOff setTitle:@"Off" forState:UIControlStateNormal];
+            [_buttonFlashOff setTitle:NSLocalizedStringFromTableInBundle(@"Off", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"") forState:UIControlStateNormal];
             _buttonFlashOff.frame = _buttonFlash.frame;
             [_buttonFlashOff sizeToFit];
             rect = _buttonFlashOff.frame;
@@ -115,7 +112,7 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
         //Camera
         {
             _buttonCamera = [UIButton buttonWithType:UIButtonTypeSystem];
-            [_buttonCamera setImage:[UIImage imageInsideMediaPickerBundleNamed:@"IQ_camera_switch"] forState:UIControlStateNormal];
+            [_buttonCamera setImage:[UIImage imageNamed:@"IQ_camera_switch" inBundle:[NSBundle bundleWithIdentifier:BundleIdentifier] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
             [_buttonCamera addTarget:self action:@selector(cameraAction:) forControlEvents:UIControlEventTouchUpInside];
             _buttonCamera.tintColor = [UIColor whiteColor];
             _buttonCamera.frame = CGRectMake(CGRectGetMaxX(self.bounds)-40-5, 0, 40, 40);
@@ -147,12 +144,13 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
         }
         
         {
-            _labelFileSize = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 100, 40)];
+            //Alexandr's changes
+            /*_labelFileSize = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 100, 40)];
             _labelFileSize.textAlignment = NSTextAlignmentLeft;
             _labelFileSize.font = [UIFont systemFontOfSize:12];
             _labelFileSize.textColor = [UIColor whiteColor];
             _labelFileSize.alpha = 0;
-            [self addSubview:_labelFileSize];
+            [self addSubview:_labelFileSize];*/
             
             _labelDuration = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
             _labelDuration.center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
@@ -168,67 +166,64 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
     return self;
 }
 
--(void)setPreferredPreset:(NSArray<AVCaptureSessionPreset> *)preferredPreset
+-(void)setPreferredPreset:(NSArray<NSNumber *> *)preferredPreset
 {
     _preferredPreset = preferredPreset;
     
     NSMutableArray<NSDictionary*> *sessionSupportedPreset = [[NSMutableArray alloc] init];
-    NSMutableArray <AVCaptureSessionPreset> *supportedPreset = [[NSMutableArray alloc] init];
+    NSMutableArray <NSNumber *> *supportedPreset = [[NSMutableArray alloc] init];
     
-    for (AVCaptureSessionPreset preset in _preferredPreset)
+    for (NSNumber *preset in _preferredPreset)
     {
-        [supportedPreset addObject:preset];
-        
-        if (preset == AVCaptureSessionPresetHigh)
+        switch ([preset integerValue])
         {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":NSLocalizedString(@"HIGH", @"")}];
-        }
-        else if (preset == AVCaptureSessionPresetMedium)
-        {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":@"MEDIUM"}];
-        }
-        else if (preset == AVCaptureSessionPresetLow)
-        {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":@"LOW"}];
-        }
-        else if (preset == AVCaptureSessionPreset352x288)
-        {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":@"288P"}];
-        }
-        else if (preset == AVCaptureSessionPreset640x480)
-        {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":@"480P"}];
-        }
-        else if (preset == AVCaptureSessionPreset1280x720)
-        {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":@"720P"}];
-        }
-        else if (preset == AVCaptureSessionPreset1920x1080)
-        {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":@"1080P"}];
-        }
-        else if (preset == AVCaptureSessionPreset3840x2160)
-        {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":@"2160P"}];
-        }
-        else if (preset == AVCaptureSessionPresetiFrame960x540)
-        {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":@"i540P"}];
-        }
-        else if (preset == AVCaptureSessionPresetiFrame1280x720)
-        {
-            [sessionSupportedPreset addObject:@{@"quality":preset,@"name":@"i720P"}];
-        }
-        else
-        {
-            [supportedPreset removeObject:preset];
+            case IQCaptureSessionPresetHigh:
+                [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPresetHigh),@"name":NSLocalizedStringFromTableInBundle(@"HIGH", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"")}];
+                [supportedPreset addObject:@(IQCaptureSessionPresetHigh)];
+                break;
+            case IQCaptureSessionPresetMedium:
+                [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPresetMedium),@"name":NSLocalizedStringFromTableInBundle(@"MEDIUM", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"")}];
+                [supportedPreset addObject:@(IQCaptureSessionPresetMedium)];
+                break;
+            case IQCaptureSessionPresetLow:
+                [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPresetLow),@"name":NSLocalizedStringFromTableInBundle(@"LOW", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"")}];
+                [supportedPreset addObject:@(IQCaptureSessionPresetLow)];
+                break;
+            case IQCaptureSessionPreset352x288:
+                [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPreset352x288),@"name":@"288P"}];
+                [supportedPreset addObject:@(IQCaptureSessionPreset352x288)];
+                break;
+            case IQCaptureSessionPreset640x480:
+                [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPreset640x480),@"name":@"480P"}];
+                [supportedPreset addObject:@(IQCaptureSessionPreset640x480)];
+                break;
+            case IQCaptureSessionPreset1280x720:
+                [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPreset1280x720),@"name":@"720P"}];
+                [supportedPreset addObject:@(IQCaptureSessionPreset1280x720)];
+                break;
+            case IQCaptureSessionPreset1920x1080:
+                [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPreset1920x1080),@"name":@"1080P"}];
+                [supportedPreset addObject:@(IQCaptureSessionPreset1920x1080)];
+                break;
+            case IQCaptureSessionPreset3840x2160:
+                [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPreset3840x2160),@"name":@"2160P"}];
+                [supportedPreset addObject:@(IQCaptureSessionPreset3840x2160)];
+                break;
+            case IQCaptureSessionPresetiFrame960x540:
+                [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPresetiFrame960x540),@"name":@"i540P"}];
+                [supportedPreset addObject:@(IQCaptureSessionPresetiFrame960x540)];
+                break;
+            case IQCaptureSessionPresetiFrame1280x720:
+                [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPresetiFrame1280x720),@"name":@"i720P"}];
+                [supportedPreset addObject:@(IQCaptureSessionPresetiFrame1280x720)];
+                break;
         }
     }
 
     if (sessionSupportedPreset.count == 0)
     {
-        [sessionSupportedPreset addObject:@{@"quality":AVCaptureSessionPresetHigh,@"name": NSLocalizedString(@"HIGH", @"") }];
-        [supportedPreset addObject:AVCaptureSessionPresetHigh];
+        [sessionSupportedPreset addObject:@{@"quality":@(IQCaptureSessionPresetHigh),@"name":NSLocalizedStringFromTableInBundle(@"HIGH", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @"")}];
+        [supportedPreset addObject:@(IQCaptureSessionPresetHigh)];
     }
 
     _qualities = [sessionSupportedPreset copy];
@@ -241,7 +236,7 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
 -(void)setDuration:(NSTimeInterval)duration
 {
     _duration = duration;
-    _labelDuration.text = [NSString timeStringForTimeInterval:duration forceIncludeHours:YES];
+    _labelDuration.text = [NSString timeStringForTimeInterval:duration maximumDuration:_maximumDuration forceIncludeHours:NO];
 }
 
 -(void)setFileSize:(long long)fileSize
@@ -279,13 +274,8 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
     [self updateUI];
 }
 
--(void)setVideoPreset:(AVCaptureSessionPreset)videoPreset
+-(void)setVideoPreset:(IQCaptureSessionPreset)videoPreset
 {
-    if (videoPreset == AVCaptureSessionPresetPhoto)
-    {
-        videoPreset = AVCaptureSessionPresetHigh;
-    }
-    
     _videoPreset = videoPreset;
 
     [self updateUI];
@@ -318,21 +308,21 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
     switch (self.torchMode) {
         case AVCaptureTorchModeOn:
         {
-            [self.buttonFlash setImage:[UIImage imageInsideMediaPickerBundleNamed:@"IQ_camera_flash"] forState:UIControlStateNormal];
+            [self.buttonFlash setImage:[UIImage imageNamed:@"IQ_camera_flash" inBundle:[NSBundle bundleWithIdentifier:BundleIdentifier] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
             self.buttonFlash.tintColor = self.buttonFlashOn.tintColor = [UIColor yellowColor];
             self.buttonFlashAuto.tintColor = self.buttonFlashOff.tintColor = [UIColor whiteColor];
         }
             break;
         case AVCaptureTorchModeOff:
         {
-            [self.buttonFlash setImage:[UIImage imageInsideMediaPickerBundleNamed:@"IQ_camera_flash_off"] forState:UIControlStateNormal];
+            [self.buttonFlash setImage:[UIImage imageNamed:@"IQ_camera_flash_off" inBundle:[NSBundle bundleWithIdentifier:BundleIdentifier] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
             self.buttonFlashOff.tintColor = [UIColor yellowColor];
             self.buttonFlash.tintColor = self.buttonFlashAuto.tintColor = self.buttonFlashOn.tintColor = [UIColor whiteColor];
         }
             break;
         case AVCaptureTorchModeAuto:
         {
-            [self.buttonFlash setImage:[UIImage imageInsideMediaPickerBundleNamed:@"IQ_camera_flash"] forState:UIControlStateNormal];
+            [self.buttonFlash setImage:[UIImage imageNamed:@"IQ_camera_flash" inBundle:[NSBundle bundleWithIdentifier:BundleIdentifier] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
             self.buttonFlashAuto.tintColor = [UIColor yellowColor];
             self.buttonFlash.tintColor = self.buttonFlashOn.tintColor = self.buttonFlashOff.tintColor = [UIColor whiteColor];
         }
@@ -347,7 +337,7 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
         NSDictionary *selectedQuality = nil;
         for (NSDictionary *quality in _qualities)
         {
-            AVCaptureSessionPreset preset = quality[@"quality"];
+            IQCaptureSessionPreset preset = [quality[@"quality"] integerValue];
             
             if (preset == self.videoPreset)
             {
@@ -384,7 +374,7 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
 -(void)showHideSettings
 {
     __weak typeof(self) weakSelf = self;
-
+    
     [UIView animateWithDuration:0.2 animations:^{
         
         //Flash
@@ -495,7 +485,7 @@ typedef NS_ENUM(NSUInteger, IQVideoSettingsType) {
 
 -(void)pickerView:(IQAKPickerView *)pickerView didSelectItem:(NSInteger)item
 {
-    AVCaptureSessionPreset preset = _qualities[self.qualityPickerView.selectedItem][@"quality"];
+    IQCaptureSessionPreset preset = [_qualities[self.qualityPickerView.selectedItem][@"quality"] integerValue];
     if (preset != self.videoPreset)
     {
         if ([self.delegate respondsToSelector:@selector(videoSettingsView:didChangeVideoPreset:)])

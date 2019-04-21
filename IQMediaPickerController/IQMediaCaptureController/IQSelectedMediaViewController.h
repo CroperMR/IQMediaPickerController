@@ -22,15 +22,16 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UICollectionViewController.h>
+@import UIKit;
+#import "IQMediaPickerControllerConstants.h"
 
 @class IQMediaCaptureController;
 
 @interface IQSelectedMediaViewController : UICollectionViewController
 
-@property NSMutableArray<NSURL*> *videoURLs;
-@property NSMutableArray<NSURL*> *audioURLs;
-@property NSMutableArray<UIImage*> *arrayImages;
+@property NSMutableArray *videoURLs;
+@property NSMutableArray *audioURLs;
+@property NSMutableArray *arrayImagesAttribute;
 
 @property(nonatomic, weak) IQMediaCaptureController *mediaCaptureController;
 

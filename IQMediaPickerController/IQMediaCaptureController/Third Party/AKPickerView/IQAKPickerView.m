@@ -6,13 +6,9 @@
 //  Copyright (c) 2014 Akio Yasui. All rights reserved.
 //
 
-#import <UIKit/UICollectionViewFlowLayout.h>
-#import <UIKit/UICollectionViewCell.h>
-#import <UIKit/NSAttributedString.h>
-#import <UIKit/NSStringDrawing.h>
-#import <Availability.h>
-
 #import "IQAKPickerView.h"
+#import "IQMediaPickerControllerConstants.h"
+#import <Availability.h>
 
 @class IQAKCollectionViewLayout;
 
@@ -171,13 +167,13 @@
 	CGSize size;
 	CGSize highlightedSize;
 #ifdef __IPHONE_7_0
-    size = [string sizeWithAttributes:@{NSFontAttributeName: self.font}];
-    highlightedSize = [string sizeWithAttributes:@{NSFontAttributeName: self.highlightedFont}];
+	size = [string sizeWithAttributes:@{NSFontAttributeName: self.font}];
+	highlightedSize = [string sizeWithAttributes:@{NSFontAttributeName: self.highlightedFont}];
 #else
-    size = [string sizeWithFont:self.font];
-    highlightedSize = [string sizeWithFont:self.highlightedFont];
+	size = [string sizeWithFont:self.font];
+	highlightedSize = [string sizeWithFont:self.highlightedFont];
 #endif
-	return CGSizeMake(ceil(MAX(size.width, highlightedSize.width)), ceil(MAX(size.height, highlightedSize.height)));
+	return CGSizeMake(ceilf(MAX(size.width, highlightedSize.width)), ceilf(MAX(size.height, highlightedSize.height)));
 }
 
 #pragma mark -
@@ -198,7 +194,7 @@
 - (CGFloat)offsetForItem:(NSUInteger)item
 {
 	NSAssert(item < [self.collectionView numberOfItemsInSection:0],
-			 @"item out of range; '%lu' passed, but the maximum is '%lu'", item, [self.collectionView numberOfItemsInSection:0]);
+			 NSLocalizedStringFromTableInBundle(@"item out of range; '%lu' passed, but the maximum is '%lu'", TargetIdentifier, [NSBundle bundleWithIdentifier:BundleIdentifier], @""), item, [self.collectionView numberOfItemsInSection:0]);
 
 	CGFloat offset = 0.0;
 
@@ -512,7 +508,7 @@
 			break;
 		}
 		case IQAKPickerViewStyle3D: {
-			NSMutableArray<UICollectionViewLayoutAttributes*> *attributes = [NSMutableArray array];
+			NSMutableArray *attributes = [NSMutableArray array];
 			if ([self.collectionView numberOfSections]) {
 				for (NSInteger i = 0; i < [self.collectionView numberOfItemsInSection:0]; i++) {
 					NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];

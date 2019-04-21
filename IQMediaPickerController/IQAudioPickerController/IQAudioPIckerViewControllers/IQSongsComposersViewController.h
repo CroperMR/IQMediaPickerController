@@ -22,7 +22,7 @@
 //  THE SOFTWARE.
 
 
-#import <UIKit/UITableViewController.h>
+@import UIKit;
 
 @class IQAudioPickerController;
 

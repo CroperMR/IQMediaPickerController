@@ -23,7 +23,6 @@
 
 
 #import "IQFeatureOverlay.h"
-#import <UIKit/UIPanGestureRecognizer.h>
 
 @interface IQFeatureOverlay ()<UIGestureRecognizerDelegate>
 

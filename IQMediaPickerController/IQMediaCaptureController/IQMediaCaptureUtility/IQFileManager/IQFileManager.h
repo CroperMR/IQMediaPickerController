@@ -22,7 +22,7 @@
 //  THE SOFTWARE.
 
 
-#import <Foundation/NSObject.h>
+@import Foundation;
 
 @class AVURLAsset;
 
@@ -33,10 +33,10 @@ typedef void(^CompletionHandler)(BOOL merged);
 + (NSString*)IQDocumentDirectory;
 + (NSString*)IQTemporaryDirectory;
 
-+ (NSArray<NSString *>*)filesAtPath:(NSString*)path;
++ (NSArray*)filesAtPath:(NSString*)path;
 + (CGFloat)durationOfFileAtPath:(NSString*)path;
-+ (NSArray<NSNumber *>*)durationsOfFilesAtPath:(NSString*)path;
-+ (NSArray<NSNumber *>*)durationsOfMediaURLs:(NSArray<NSURL*>*)URLs;
++ (NSArray*)durationsOfFilesAtPath:(NSString*)path;
++ (NSArray*)durationsOfMediaURLs:(NSArray*)URLs;
 
 + (void)mergeItemsFromPath:(NSString*)fromPath toPath:(NSString*)toPath completionHandler:(CompletionHandler)handler;
 

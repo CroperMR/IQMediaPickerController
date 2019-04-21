@@ -87,7 +87,7 @@ Example Usage
 
 @implementation ViewController
 {
-    IQMediaPickerSelection *selectedMedias;
+    NSDictionary *mediaInfo;
 }
 
 -(void)showMediaPicker
@@ -97,20 +97,19 @@ Example Usage
     
     //Set additional settings if you would like to
     //[controller setSourceType:IQMediaPickerControllerSourceTypeCameraMicrophone];//or IQMediaPickerControllerSourceTypeLibrary
-    //[controller setMediaTypes:@[@(PHAssetMediaTypeAudio),@(PHAssetMediaTypeVideo),@(PHAssetMediaTypeImage)]];
-    //controller.captureDevice = AVCaptureDevicePositionBack;//or AVCaptureDevicePositionFront
+    //[controller setMediaTypes:@[@(IQMediaPickerControllerMediaTypeAudio),@(IQMediaPickerControllerMediaTypeAudio),@(IQMediaPickerControllerMediaTypeAudio)]];
+    //controller.captureDevice = IQMediaPickerControllerCameraDeviceRear;//orIQMediaPickerControllerCameraDeviceFront
     //controller.allowsPickingMultipleItems = YES;//or NO
-    //controller.allowedVideoQualities = @[@(AVCaptureSessionPreset1920x1080),@(AVCaptureSessionPresetHigh)];
+    //controller.allowedVideoQualities = @[@(IQMediaPickerControllerQualityType1920x1080),@(IQMediaPickerControllerQualityTypeHigh)];
 
     [self presentViewController:controller animated:YES completion:nil];
 }
 
--(void)mediaPickerController:(IQMediaPickerController *)controller didFinishMedias:(IQMediaPickerSelection *)selection
+- (void)mediaPickerController:(IQMediaPickerController*)controller didFinishMediaWithInfo:(NSDictionary *)info;
 {
-    NSLog(@"Info: %@",selection);   //Here you'll get the information about captured or picked assets
+    NSLog(@"Info: %@",info);//Here you'll get the information about captured or picked assets
 
-    selectedMedias = selection;
-
+    mediaInfo = [info copy];
     [self.tableView reloadData];
 }
 
