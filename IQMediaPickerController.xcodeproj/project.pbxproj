@@ -89,6 +89,7 @@
 		4C691C041F56F47A00DC80FD /* NSString+IQTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C691BB01F56F47A00DC80FD /* NSString+IQTimeIntervalFormatter.m */; };
 		4C691C051F56F47A00DC80FD /* IQAKPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C691BB31F56F47A00DC80FD /* IQAKPickerView.h */; };
 		4C691C061F56F47A00DC80FD /* IQAKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C691BB41F56F47A00DC80FD /* IQAKPickerView.m */; };
+		78A3A7E2226D057400FDAF73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A3A7E4226D057400FDAF73 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +177,9 @@
 		4C691BB01F56F47A00DC80FD /* NSString+IQTimeIntervalFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IQTimeIntervalFormatter.m"; sourceTree = "<group>"; };
 		4C691BB31F56F47A00DC80FD /* IQAKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQAKPickerView.h; sourceTree = "<group>"; };
 		4C691BB41F56F47A00DC80FD /* IQAKPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQAKPickerView.m; sourceTree = "<group>"; };
+		78A3A7E3226D057400FDAF73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78A3A7E5226D057800FDAF73 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78A3A7E6226D058D00FDAF73 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,7 @@
 		4C691B4A1F56F46100DC80FD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				78A3A7E4226D057400FDAF73 /* Localizable.strings */,
 				4C691B481F56F42E00DC80FD /* IQMediaPickerController-Info.plist */,
 			);
 			name = "Supporting Files";
@@ -587,6 +592,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
+				de,
 			);
 			mainGroup = 4C691B331F56F3F200DC80FD;
 			productRefGroup = 4C691B3E1F56F3F200DC80FD /* Products */;
@@ -604,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C691BE41F56F47A00DC80FD /* IQMediaCaptureController.xcassets in Resources */,
+				78A3A7E2226D057400FDAF73 /* Localizable.strings in Resources */,
 				4C691BC71F56F47A00DC80FD /* IQAudioPickerController.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,6 +667,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		78A3A7E4226D057400FDAF73 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78A3A7E3226D057400FDAF73 /* en */,
+				78A3A7E5226D057800FDAF73 /* ja */,
+				78A3A7E6226D058D00FDAF73 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4C691B431F56F3F200DC80FD /* Debug */ = {
