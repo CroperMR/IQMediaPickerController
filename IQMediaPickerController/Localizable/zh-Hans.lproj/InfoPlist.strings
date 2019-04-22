@@ -1,7 +1,1 @@
-"NSCameraUsageDescription"              = "啟用SC提供商訪問您的相機，以便您可以在SC提供商應用程序中拍攝和附加照片";
-"NSLocationAlwaysUsageDescription"      = "需要位置訪問才能驗證您的入住地點";
-"NSLocationWhenInUseUsageDescription"   = "需要位置訪問才能驗證您的入住地點";
-"NSPhotoLibraryAddUsageDescription"     = "啟用SC提供商訪問您的相機膠卷，以便您可以附加照片";
-"NSPhotoLibraryUsageDescription"        = "啟用SC提供商訪問您的相機膠卷，以便您可以附加照片";
-"NSAppleMusicUsageDescription"          = "需要媒體庫訪問才能播放媒體庫中的曲目";
-"NSMicrophoneUsageDescription"          = "請訪問麥克風";
+

@@ -1,8 +1,1 @@
-"NSCameraUsageDescription"              = "Enable SC Provider to access your camera so you could take and attach photos within the SC Provider application";
-"NSLocationAlwaysUsageDescription"      = "Location access is required to validate your check in location";
-"NSLocationWhenInUseUsageDescription"   = "Location access is required to validate your check in location";
-"NSPhotoLibraryAddUsageDescription"     = "Enable SC Provider to access your camera roll so you could attach photos";
-"NSPhotoLibraryUsageDescription"        = "Enable SC Provider to access your camera roll so you could attach photos";
-"NSAppleMusicUsageDescription"          = "Media Library access is needed to play tracks from the Media library.";
-"NSMicrophoneUsageDescription"          = "Give access to the microphone, please.";
 

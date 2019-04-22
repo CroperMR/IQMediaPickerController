@@ -1,8 +1,1 @@
 
-"NSCameraUsageDescription" = "Ermöglichen Sie SC Provider den Zugriff auf Ihre Kamera, damit Sie Fotos in der SC Provider-Anwendung aufnehmen und anhängen können.";
-"NSLocationAlwaysUsageDescription" = "Der Standortzugang ist erforderlich, um den Check-in-Standort zu überprüfen.";
-"NSLocationWhenInUseUsageDescription" = "Der Standortzugriff ist erforderlich, um den Check-in-Standort zu überprüfen.";
-"NSPhotoLibraryAddUsageDescription" = "Ermöglichen Sie SC Provider den Zugriff auf Ihre Kamerarolle, damit Sie Fotos anhängen können";
-"NSPhotoLibraryUsageDescription" = "Ermöglichen Sie SC Provider den Zugriff auf Ihre Kamerarolle, damit Sie Fotos anhängen können";
-"NSAppleMusicUsageDescription" = "Zugriff auf die Medienbibliothek ist erforderlich, um Titel aus der Medienbibliothek wiederzugeben.";
-"NSMicrophoneUsageDescription" = "Bitte geben Sie Zugriff auf das Mikrofon.";

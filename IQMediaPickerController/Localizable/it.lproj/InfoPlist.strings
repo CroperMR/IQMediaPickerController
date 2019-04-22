@@ -1,7 +1,1 @@
-"NSCameraUsageDescription" = "Abilita il provider SC ad accedere alla tua fotocamera in modo da poter prendere e allegare foto all'interno dell'applicazione SC Provider";
-"NSLocationAlwaysUsageDescription" = "L'accesso alla posizione è necessario per convalidare la tua posizione di check-in";
-"NSLocationWhenInUseUsageDescription" = "L'accesso alla posizione è necessario per convalidare il luogo del check-in";
-"NSPhotoLibraryAddUsageDescription" = "Abilita il provider SC per accedere al tuo rullino fotografico in modo da poter allegare foto";
-"NSPhotoLibraryUsageDescription" = "Abilita il provider SC per accedere al tuo rullino fotografico in modo da poter allegare foto";
-"NSAppleMusicUsageDescription" = "L'accesso alla libreria multimediale è necessario per riprodurre tracce dalla libreria multimediale.";
-"NSMicrophoneUsageDescription" = "Concedi l'accesso al microfono, per favore.";
+

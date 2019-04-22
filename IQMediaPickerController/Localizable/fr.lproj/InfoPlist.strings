@@ -1,7 +1,1 @@
-"NSCameraUsageDescription"              = "Autoriser SC Provider à accéder à votre caméra afin de pouvoir prendre et joindre des photos dans l'application SC Provider";
-"NSLocationAlwaysUsageDescription"      = "L'accès à l'emplacement est requis pour valider votre lieu d'enregistrement";
-"NSLocationWhenInUseUsageDescription"   = "L'accès à l'emplacement est requis pour valider votre lieu d'enregistrement";
-"NSPhotoLibraryAddUsageDescription"     = "Activer SC Provider pour accéder à votre pellicule afin de pouvoir joindre des photos";
-"NSPhotoLibraryUsageDescription"        = "Activer SC Provider pour accéder à votre pellicule afin de pouvoir joindre des photos";
-"NSAppleMusicUsageDescription"          = "L'accès à la médiathèque est nécessaire pour lire les pistes de la médiathèque.";
-"NSMicrophoneUsageDescription"          = "Donnez l'accès au microphone, s'il vous plaît.";
+
