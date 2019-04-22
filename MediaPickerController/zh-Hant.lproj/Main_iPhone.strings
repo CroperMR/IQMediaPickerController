@@ -1,0 +1,39 @@
+
+/* Class = "UILabel"; text = "Allow Multiple Media Picker"; ObjectID = "0QM-62-23N"; */
+"0QM-62-23N.text" = "Allow Multiple Media Picker";
+
+/* Class = "UILabel"; text = "Picking source Camera"; ObjectID = "590-Xd-FZf"; */
+"590-Xd-FZf.text" = "Picking source Camera";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8iu-oy-W7A"; */
+"8iu-oy-W7A.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "IQMediaPickerController"; ObjectID = "IGN-UU-hga"; */
+"IGN-UU-hga.title" = "IQMediaPickerController";
+
+/* Class = "UILabel"; text = "Flash Off"; ObjectID = "J5i-h5-AZl"; */
+"J5i-h5-AZl.text" = "Flash Off";
+
+/* Class = "UIBarButtonItem"; title = "Pick"; ObjectID = "L7l-CX-jqq"; */
+"L7l-CX-jqq.title" = "Pick";
+
+/* Class = "UILabel"; text = "Audio picking allowed"; ObjectID = "NUB-gd-2WD"; */
+"NUB-gd-2WD.text" = "Audio picking allowed";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dmv-jk-SUI"; */
+"dmv-jk-SUI.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ghu-3C-hWn"; */
+"ghu-3C-hWn.text" = "Label";
+
+/* Class = "UILabel"; text = "User Rear Camera"; ObjectID = "qqR-AC-Ccb"; */
+"qqR-AC-Ccb.text" = "User Rear Camera";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vWF-Ln-LdD"; */
+"vWF-Ln-LdD.text" = "Label";
+
+/* Class = "UILabel"; text = "Video picking allowed"; ObjectID = "vg0-5W-pOb"; */
+"vg0-5W-pOb.text" = "Video picking allowed";
+
+/* Class = "UILabel"; text = "Photo picking allowed"; ObjectID = "viV-Lt-93j"; */
+"viV-Lt-93j.text" = "Photo picking allowed";
