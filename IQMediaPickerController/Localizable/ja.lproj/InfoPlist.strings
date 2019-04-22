@@ -1,0 +1,8 @@
+"NSCameraUsageDescription"              = "SC Providerを有効にしてカメラにアクセスし、FTMアプリケーション内で写真を撮ったり添付したりできます";
+"NSLocationAlwaysUsageDescription"      = "あなたの小切手の場所を確認するために所在地アクセスが必要です";
+"NSLocationWhenInUseUsageDescription"   = "あなたの小切手の場所を確認するために所在地アクセスが必要です";
+"NSPhotoLibraryAddUsageDescription"     = "カメラロールにアクセスするSC Providerを有効にして、写真を添付できます";
+"NSPhotoLibraryUsageDescription"        = "カメラロールにアクセスするSC Providerを有効にして写真を添付できます";
+"NSAppleMusicUsageDescription"          = "メディアライブラリからトラックを再生するには、メディアライブラリへのアクセスが必要です。";
+"NSMicrophoneUsageDescription"          = "マイクへのアクセスを許可してください。";
+

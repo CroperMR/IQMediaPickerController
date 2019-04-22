@@ -1,0 +1,7 @@
+"NSCameraUsageDescription"              = "Habilite SC Provider para acceder a su cámara para que pueda tomar y adjuntar fotos dentro de la aplicación SC Provider";
+"NSLocationAlwaysUsageDescription"      = "Se requiere acceso a la ubicación para validar la ubicación de su cheque";
+"NSLocationWhenInUseUsageDescription"   = "Se requiere acceso a la ubicación para validar la ubicación de su cheque";
+"NSPhotoLibraryAddUsageDescription"     = "Habilite SC Provider para acceder al rollo de la cámara para que pueda adjuntar fotos";
+"NSPhotoLibraryUsageDescription"        = "Habilite SC Provider para acceder al rollo de la cámara para que pueda adjuntar fotos";
+"NSAppleMusicUsageDescription"          = "Se necesita acceso a la Biblioteca multimedia para reproducir pistas desde la biblioteca multimedia.";
+"NSMicrophoneUsageDescription"          = "Dar acceso al micrófono, por favor";
