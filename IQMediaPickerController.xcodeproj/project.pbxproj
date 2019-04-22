@@ -591,9 +591,11 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				ja,
 				de,
+				Base,
 			);
 			mainGroup = 4C691B331F56F3F200DC80FD;
 			productRefGroup = 4C691B3E1F56F3F200DC80FD /* Products */;
