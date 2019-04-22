@@ -44,7 +44,7 @@
 /* No comment provided by engineer. */
 "HIGH" = "高";
 /* No comment provided by engineer. */
-"item out of range; '%lu' passed, but the maximum is '%lu'" = "项目超出范围; '％1 $ lu'通过，但最大值为'％2 $ lu'";
+"item out of range; '%lu' passed, but the maximum is '%lu'" = "项目超出范围; '%lu'通过，但最大值为'%lu'";
 /* No comment provided by engineer. */
 "LOW" = "低";
 /* No comment provided by engineer. */

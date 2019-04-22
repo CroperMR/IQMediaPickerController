@@ -46,6 +46,8 @@
 		4C8EA1BB1F1A8C7B00026A35 /* VideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTableViewCell.m; sourceTree = "<group>"; };
 		4C99E3171F13F75300CE757D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		58ECD05A51500ACC7B77A440 /* Pods-MediaPickerController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaPickerController.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaPickerController/Pods-MediaPickerController.release.xcconfig"; sourceTree = "<group>"; };
+		78AE61BE226DE46B00379F16 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
+		78AE61BF226DE46B00379F16 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		B425FEFB6305D1DCA05474C9 /* Pods-MediaPickerController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaPickerController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaPickerController/Pods-MediaPickerController.debug.xcconfig"; sourceTree = "<group>"; };
 		C035C21B19A8B5BE0072C2C0 /* MediaPickerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaPickerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C035C21E19A8B5BE0072C2C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -202,12 +204,14 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 				ja,
 				"fr-CA",
 				ko,
 				es,
+				"zh-Hans",
 			);
 			mainGroup = C035C21219A8B5BE0072C2C0;
 			productRefGroup = C035C21C19A8B5BE0072C2C0 /* Products */;
@@ -301,6 +305,7 @@
 				E9E46ADA208217320070332A /* fr-CA */,
 				E9E46ADC2082173A0070332A /* ko */,
 				E9E46ADE208217410070332A /* es */,
+				78AE61BF226DE46B00379F16 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				E9E46AD9208217320070332A /* fr-CA */,
 				E9E46ADB2082173A0070332A /* ko */,
 				E9E46ADD208217410070332A /* es */,
+				78AE61BE226DE46B00379F16 /* zh-Hans */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";

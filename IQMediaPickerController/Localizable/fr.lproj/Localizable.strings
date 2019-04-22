@@ -1,17 +1,17 @@
 /* No comment provided by engineer. */
-"%ld Selected" = "%ld Selected";
+"%ld Selected" = "%ld sélectionné";
 
 /* No comment provided by engineer. */
 "%lu maximum" = "%lu maximum";
 
 /* No comment provided by engineer. */
-"%lu Media selected" = "%lu Media selected";
+"%lu Media selected" = "%lu Media sélectionné";
 
 /* No comment provided by engineer. */
-"%lu selected" = "%lu selected";
+"%lu selected" = "%lu sélectionné";
 
 /* No comment provided by engineer. */
-"999 media selected" = "999 media selected";
+"999 media selected" = "999 médias sélectionnés";
 
 /* No comment provided by engineer. */
 "album" = "album";
@@ -23,73 +23,73 @@
 "Albums" = "Albums";
 
 /* No comment provided by engineer. */
-"Artists" = "Artists";
+"Artists" = "Artistes";
 
 /* No comment provided by engineer. */
-"AUDIO" = "AUDIO";
+"AUDIO" = "L'AUDIO";
 
 /* No comment provided by engineer. */
 "Auto" = "Auto";
 
 /* No comment provided by engineer. */
-"Can't record video" = "Can't record video";
+"Can't record video" = "Impossible d'enregistrer une vidéo";
 
 /* No comment provided by engineer. */
-"Can't take picture" = "Can't take picture";
+"Can't take picture" = "Impossible de prendre la photo";
 
 /* No comment provided by engineer. */
-"Cancel" = "Cancel";
+"Cancel" = "Annuler";
 
 /* No comment provided by engineer. */
 "Compilations" = "Compilations";
 
 /* No comment provided by engineer. */
-"Composers" = "Composers";
+"Composers" = "Compositeurs";
 
 /* No comment provided by engineer. */
-"Done" = "Done";
+"Done" = "Terminé";
 
 /* No comment provided by engineer. */
-"Error!" = "Error!";
+"Error!" = "Erreur!";
 
 /* No comment provided by engineer. */
 "Genre" = "Genre";
 
 /* No comment provided by engineer. */
-"HIGH" = "HIGH";
+"HIGH" = "HAUTE";
 
 /* No comment provided by engineer. */
-"item out of range; '%lu' passed, but the maximum is '%lu'" = "item out of range; '%1$lu' passed, but the maximum is '%2$lu'";
+"item out of range; '%lu' passed, but the maximum is '%lu'" = "article hors de portée; '%lu' est passé, mais le maximum est '%lu'";
 
 /* No comment provided by engineer. */
-"LOW" = "LOW";
+"LOW" = "FAIBLE";
 
 /* No comment provided by engineer. */
-"MEDIUM" = "MEDIUM";
+"MEDIUM" = "MOYEN";
 
 /* No comment provided by engineer. */
 "min" = "min";
 
 /* No comment provided by engineer. */
-"mins" = "mins";
+"mins" = "minutes";
 
 /* No comment provided by engineer. */
-"No photos" = "No photos";
+"No photos" = "Pas de photos";
 
 /* No comment provided by engineer. */
-"no songs" = "no songs";
+"no songs" = "pas de chansons";
 
 /* No comment provided by engineer. */
-"No videos" = "No videos";
+"No videos" = "Pas de vidéos";
 
 /* No comment provided by engineer. */
-"Off" = "Off";
+"Off" = "De";
 
 /* No comment provided by engineer. */
-"OK" = "OK";
+"OK" = "D'accord";
 
 /* No comment provided by engineer. */
-"On" = "On";
+"On" = "Sur";
 
 /* No comment provided by engineer. */
 "Photo" = "Photo";
@@ -104,35 +104,35 @@
 "Playlists" = "Playlists";
 
 /* No comment provided by engineer. */
-"Retake" = "Retake";
+"Retake" = "Reprendre";
 
 /* No comment provided by engineer. */
-"Select" = "Select";
+"Select" = "Sélectionner";
 
 /* No comment provided by engineer. */
-"song" = "song";
+"song" = "chanson";
 
 /* No comment provided by engineer. */
-"songs" = "songs";
+"songs" = "Chansons";
 
 /* No comment provided by engineer. */
-"Songs" = "Songs";
+"Songs" = "Chansons";
 
 /* No comment provided by engineer. */
-"Take more" = "Take more";
+"Take more" = "Prends en plus";
 
 /* No comment provided by engineer. */
-"Taking picture is in progress" = "Taking picture is in progress";
+"Taking picture is in progress" = "Prendre une photo est en cours";
 
 /* No comment provided by engineer. */
-"Use Video" = "Use Video";
+"Use Video" = "Utiliser la vidéo";
 
 /* No comment provided by engineer. */
-"Video" = "Video";
+"Video" = "Vidéo";
 
 /* No comment provided by engineer. */
-"VIDEO" = "VIDEO";
+"VIDEO" = "VIDÉO";
 
 /* No comment provided by engineer. */
-"Videos" = "Videos";
+"Videos" = "Vidéos";
 

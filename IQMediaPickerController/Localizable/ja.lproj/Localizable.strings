@@ -1,138 +1,138 @@
 /* No comment provided by engineer. */
-"%ld Selected" = "%ld Selected";
+"%ld Selected" = "選択した%ld";
 
 /* No comment provided by engineer. */
-"%lu maximum" = "%lu maximum";
+"%lu maximum" = "%lu最大";
 
 /* No comment provided by engineer. */
-"%lu Media selected" = "%lu Media selected";
+"%lu Media selected" = "%luメディアが選択されました";
 
 /* No comment provided by engineer. */
-"%lu selected" = "%lu selected";
+"%lu selected" = "%luが選択されました";
 
 /* No comment provided by engineer. */
-"999 media selected" = "999 media selected";
+"999 media selected" = "999メディアが選択されました";
 
 /* No comment provided by engineer. */
-"album" = "album";
+"album" = "アルバム";
 
 /* No comment provided by engineer. */
-"albums" = "albums";
+"albums" = "アルバム";
 
 /* No comment provided by engineer. */
-"Albums" = "Albums";
+"Albums" = "アルバム";
 
 /* No comment provided by engineer. */
-"Artists" = "Artists";
+"Artists" = "アーティスト";
 
 /* No comment provided by engineer. */
-"AUDIO" = "AUDIO";
+"AUDIO" = "オーディオ";
 
 /* No comment provided by engineer. */
-"Auto" = "Auto";
+"Auto" = "オート";
 
 /* No comment provided by engineer. */
-"Can't record video" = "Can't record video";
+"Can't record video" = "ビデオを記録できません";
 
 /* No comment provided by engineer. */
-"Can't take picture" = "Can't take picture";
+"Can't take picture" = "写真を撮ることができません";
 
 /* No comment provided by engineer. */
-"Cancel" = "Cancel";
+"Cancel" = "キャンセル";
 
 /* No comment provided by engineer. */
-"Compilations" = "Compilations";
+"Compilations" = "コンパイル";
 
 /* No comment provided by engineer. */
-"Composers" = "Composers";
+"Composers" = "作曲家";
 
 /* No comment provided by engineer. */
-"Done" = "Done";
+"Done" = "完了";
 
 /* No comment provided by engineer. */
-"Error!" = "Error!";
+"Error!" = "エラー！";
 
 /* No comment provided by engineer. */
-"Genre" = "Genre";
+"Genre" = "ジャンル";
 
 /* No comment provided by engineer. */
-"HIGH" = "HIGH";
+"HIGH" = "高い";
 
 /* No comment provided by engineer. */
-"item out of range; '%lu' passed, but the maximum is '%lu'" = "item out of range; '%1$lu' passed, but the maximum is '%2$lu'";
+"item out of range; '%lu' passed, but the maximum is '%lu'" = "項目が範囲外です。 '%lu'が合格しましたが、最大値は ''%lu''";
 
 /* No comment provided by engineer. */
-"LOW" = "LOW";
+"LOW" = "低い";
 
 /* No comment provided by engineer. */
-"MEDIUM" = "MEDIUM";
+"MEDIUM" = "中";
 
 /* No comment provided by engineer. */
-"min" = "min";
+"min" = "分";
 
 /* No comment provided by engineer. */
-"mins" = "mins";
+"mins" = "分";
 
 /* No comment provided by engineer. */
-"No photos" = "No photos";
+"No photos" = "写真はありません";
 
 /* No comment provided by engineer. */
-"no songs" = "no songs";
+"no songs" = "曲なし";
 
 /* No comment provided by engineer. */
-"No videos" = "No videos";
+"No videos" = "ビデオはありません";
 
 /* No comment provided by engineer. */
-"Off" = "Off";
+"Off" = "オフ";
 
 /* No comment provided by engineer. */
-"OK" = "OK";
+"OK" = "よし";
 
 /* No comment provided by engineer. */
-"On" = "On";
+"On" = "に";
 
 /* No comment provided by engineer. */
-"Photo" = "Photo";
+"Photo" = "写真";
 
 /* No comment provided by engineer. */
-"PHOTO" = "PHOTO";
+"PHOTO" = "写真";
 
 /* No comment provided by engineer. */
-"Photos" = "Photos";
+"Photos" = "写真";
 
 /* No comment provided by engineer. */
-"Playlists" = "Playlists";
+"Playlists" = "プレイリスト";
 
 /* No comment provided by engineer. */
-"Retake" = "Retake";
+"Retake" = "リスターク";
 
 /* No comment provided by engineer. */
-"Select" = "Select";
+"Select" = "選択";
 
 /* No comment provided by engineer. */
-"song" = "song";
+"song" = "歌";
 
 /* No comment provided by engineer. */
-"songs" = "songs";
+"songs" = "曲";
 
 /* No comment provided by engineer. */
-"Songs" = "Songs";
+"Songs" = "曲";
 
 /* No comment provided by engineer. */
-"Take more" = "Take more";
+"Take more" = "もっと取って";
 
 /* No comment provided by engineer. */
-"Taking picture is in progress" = "Taking picture is in progress";
+"Taking picture is in progress" = "撮影中です";
 
 /* No comment provided by engineer. */
-"Use Video" = "Use Video";
+"Use Video" = "ビデオを使用する";
 
 /* No comment provided by engineer. */
-"Video" = "Video";
+"Video" = "ビデオ";
 
 /* No comment provided by engineer. */
-"VIDEO" = "VIDEO";
+"VIDEO" = "ビデオ";
 
 /* No comment provided by engineer. */
-"Videos" = "Videos";
+"Videos" = "ビデオ";
 

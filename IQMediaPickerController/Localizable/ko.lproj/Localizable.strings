@@ -1,138 +1,138 @@
 /* No comment provided by engineer. */
-"%ld Selected" = "%ld Selected";
+"%ld Selected" = "선택한 %ld";
 
 /* No comment provided by engineer. */
-"%lu maximum" = "%lu maximum";
+"%lu maximum" = "%lu 최대";
 
 /* No comment provided by engineer. */
-"%lu Media selected" = "%lu Media selected";
+"%lu Media selected" = "선택한 미디어 %lu 개";
 
 /* No comment provided by engineer. */
-"%lu selected" = "%lu selected";
+"%lu selected" = "선택한 %lu";
 
 /* No comment provided by engineer. */
-"999 media selected" = "999 media selected";
+"999 media selected" = "999 미디어가 선택되었습니다.";
 
 /* No comment provided by engineer. */
-"album" = "album";
+"album" = "앨범";
 
 /* No comment provided by engineer. */
-"albums" = "albums";
+"albums" = "앨범";
 
 /* No comment provided by engineer. */
-"Albums" = "Albums";
+"Albums" = "앨범";
 
 /* No comment provided by engineer. */
-"Artists" = "Artists";
+"Artists" = "연예인";
 
 /* No comment provided by engineer. */
-"AUDIO" = "AUDIO";
+"AUDIO" = "오디오";
 
 /* No comment provided by engineer. */
-"Auto" = "Auto";
+"Auto" = "자동";
 
 /* No comment provided by engineer. */
-"Can't record video" = "Can't record video";
+"Can't record video" = "비디오를 녹화 할 수 없습니다";
 
 /* No comment provided by engineer. */
-"Can't take picture" = "Can't take picture";
+"Can't take picture" = "사진을 찍을 수 없다.";
 
 /* No comment provided by engineer. */
-"Cancel" = "Cancel";
+"Cancel" = "취소";
 
 /* No comment provided by engineer. */
-"Compilations" = "Compilations";
+"Compilations" = "편집";
 
 /* No comment provided by engineer. */
-"Composers" = "Composers";
+"Composers" = "작곡가";
 
 /* No comment provided by engineer. */
-"Done" = "Done";
+"Done" = "끝난";
 
 /* No comment provided by engineer. */
-"Error!" = "Error!";
+"Error!" = "오류!";
 
 /* No comment provided by engineer. */
-"Genre" = "Genre";
+"Genre" = "유형";
 
 /* No comment provided by engineer. */
-"HIGH" = "HIGH";
+"HIGH" = "높은";
 
 /* No comment provided by engineer. */
-"item out of range; '%lu' passed, but the maximum is '%lu'" = "item out of range; '%1$lu' passed, but the maximum is '%2$lu'";
+"item out of range; '%lu' passed, but the maximum is '%lu'" = "항목이 범위를 벗어났습니다. '%lu'이 (가) 통과되었지만 최대 값은 '%lu'입니다.";
 
 /* No comment provided by engineer. */
-"LOW" = "LOW";
+"LOW" = "낮은";
 
 /* No comment provided by engineer. */
-"MEDIUM" = "MEDIUM";
+"MEDIUM" = "매질";
 
 /* No comment provided by engineer. */
-"min" = "min";
+"min" = "최소";
 
 /* No comment provided by engineer. */
-"mins" = "mins";
+"mins" = "분";
 
 /* No comment provided by engineer. */
-"No photos" = "No photos";
+"No photos" = "사진이 없습니다.";
 
 /* No comment provided by engineer. */
-"no songs" = "no songs";
+"no songs" = "노래 없음";
 
 /* No comment provided by engineer. */
-"No videos" = "No videos";
+"No videos" = "동영상 없음";
 
 /* No comment provided by engineer. */
-"Off" = "Off";
+"Off" = "떨어져서";
 
 /* No comment provided by engineer. */
-"OK" = "OK";
+"OK" = "승인";
 
 /* No comment provided by engineer. */
-"On" = "On";
+"On" = "에";
 
 /* No comment provided by engineer. */
-"Photo" = "Photo";
+"Photo" = "사진";
 
 /* No comment provided by engineer. */
-"PHOTO" = "PHOTO";
+"PHOTO" = "사진";
 
 /* No comment provided by engineer. */
-"Photos" = "Photos";
+"Photos" = "사진들";
 
 /* No comment provided by engineer. */
-"Playlists" = "Playlists";
+"Playlists" = "재생 목록";
 
 /* No comment provided by engineer. */
-"Retake" = "Retake";
+"Retake" = "다시 잡다";
 
 /* No comment provided by engineer. */
-"Select" = "Select";
+"Select" = "고르다";
 
 /* No comment provided by engineer. */
-"song" = "song";
+"song" = "노래";
 
 /* No comment provided by engineer. */
-"songs" = "songs";
+"songs" = "노래들";
 
 /* No comment provided by engineer. */
-"Songs" = "Songs";
+"Songs" = "노래들";
 
 /* No comment provided by engineer. */
-"Take more" = "Take more";
+"Take more" = "더 가져가";
 
 /* No comment provided by engineer. */
-"Taking picture is in progress" = "Taking picture is in progress";
+"Taking picture is in progress" = "사진 촬영이 진행 중입니다.";
 
 /* No comment provided by engineer. */
-"Use Video" = "Use Video";
+"Use Video" = "비디오 사용";
 
 /* No comment provided by engineer. */
-"Video" = "Video";
+"Video" = "비디오";
 
 /* No comment provided by engineer. */
-"VIDEO" = "VIDEO";
+"VIDEO" = "비디오";
 
 /* No comment provided by engineer. */
-"Videos" = "Videos";
+"Videos" = "비디오";
 

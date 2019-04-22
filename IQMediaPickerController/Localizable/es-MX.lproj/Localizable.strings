@@ -1,29 +1,29 @@
 /* No comment provided by engineer. */
-"%ld Selected" = "%ld Selected";
+"%ld Selected" = "%ld Seleccionado";
 
 /* No comment provided by engineer. */
-"%lu maximum" = "%lu maximum";
+"%lu maximum" = "%lu máximo";
 
 /* No comment provided by engineer. */
-"%lu Media selected" = "%lu Media selected";
+"%lu Media selected" = "%lu Medios seleccionados";
 
 /* No comment provided by engineer. */
-"%lu selected" = "%lu selected";
+"%lu selected" = "%lu seleccionado";
 
 /* No comment provided by engineer. */
-"999 media selected" = "999 media selected";
+"999 media selected" = "999 medios seleccionados";
 
 /* No comment provided by engineer. */
-"album" = "album";
+"album" = "álbum";
 
 /* No comment provided by engineer. */
-"albums" = "albums";
+"albums" = "álbumes";
 
 /* No comment provided by engineer. */
-"Albums" = "Albums";
+"Albums" = "Álbumes";
 
 /* No comment provided by engineer. */
-"Artists" = "Artists";
+"Artists" = "Artistas";
 
 /* No comment provided by engineer. */
 "AUDIO" = "AUDIO";
@@ -32,106 +32,106 @@
 "Auto" = "Auto";
 
 /* No comment provided by engineer. */
-"Can't record video" = "Can't record video";
+"Can't record video" = "No puedo grabar video";
 
 /* No comment provided by engineer. */
-"Can't take picture" = "Can't take picture";
+"Can't take picture" = "No se puede tomar una foto";
 
 /* No comment provided by engineer. */
-"Cancel" = "Cancel";
+"Cancel" = "Cancelar";
 
 /* No comment provided by engineer. */
-"Compilations" = "Compilations";
+"Compilations" = "Compilaciones";
 
 /* No comment provided by engineer. */
-"Composers" = "Composers";
+"Composers" = "Compositores";
 
 /* No comment provided by engineer. */
-"Done" = "Done";
+"Done" = "Hecho";
 
 /* No comment provided by engineer. */
-"Error!" = "Error!";
+"Error!" = "¡Error!";
 
 /* No comment provided by engineer. */
-"Genre" = "Genre";
+"Genre" = "Género";
 
 /* No comment provided by engineer. */
-"HIGH" = "HIGH";
+"HIGH" = "ALTO";
 
 /* No comment provided by engineer. */
-"item out of range; '%lu' passed, but the maximum is '%lu'" = "item out of range; '%1$lu' passed, but the maximum is '%2$lu'";
+"item out of range; '%lu' passed, but the maximum is '%lu'" = "elemento fuera de rango; '%lu' pasó, pero el máximo es '%lu'";
 
 /* No comment provided by engineer. */
-"LOW" = "LOW";
+"LOW" = "BAJO";
 
 /* No comment provided by engineer. */
-"MEDIUM" = "MEDIUM";
+"MEDIUM" = "MEDIO";
 
 /* No comment provided by engineer. */
 "min" = "min";
 
 /* No comment provided by engineer. */
-"mins" = "mins";
+"mins" = "minutos";
 
 /* No comment provided by engineer. */
-"No photos" = "No photos";
+"No photos" = "Sin fotos";
 
 /* No comment provided by engineer. */
-"no songs" = "no songs";
+"no songs" = "sin canciones";
 
 /* No comment provided by engineer. */
-"No videos" = "No videos";
+"No videos" = "Sin videos";
 
 /* No comment provided by engineer. */
-"Off" = "Off";
+"Off" = "Apagado";
 
 /* No comment provided by engineer. */
-"OK" = "OK";
+"OK" = "DE ACUERDO";
 
 /* No comment provided by engineer. */
-"On" = "On";
+"On" = "En";
 
 /* No comment provided by engineer. */
-"Photo" = "Photo";
+"Photo" = "Foto";
 
 /* No comment provided by engineer. */
-"PHOTO" = "PHOTO";
+"PHOTO" = "FOTO";
 
 /* No comment provided by engineer. */
-"Photos" = "Photos";
+"Photos" = "Fotos";
 
 /* No comment provided by engineer. */
-"Playlists" = "Playlists";
+"Playlists" = "Listas de reproducción";
 
 /* No comment provided by engineer. */
-"Retake" = "Retake";
+"Retake" = "Volver a tomar";
 
 /* No comment provided by engineer. */
-"Select" = "Select";
+"Select" = "Seleccionar";
 
 /* No comment provided by engineer. */
-"song" = "song";
+"song" = "canción";
 
 /* No comment provided by engineer. */
-"songs" = "songs";
+"songs" = "canciones";
 
 /* No comment provided by engineer. */
-"Songs" = "Songs";
+"Songs" = "Canciones";
 
 /* No comment provided by engineer. */
-"Take more" = "Take more";
+"Take more" = "Tomar más";
 
 /* No comment provided by engineer. */
-"Taking picture is in progress" = "Taking picture is in progress";
+"Taking picture is in progress" = "Tomar foto está en progreso";
 
 /* No comment provided by engineer. */
-"Use Video" = "Use Video";
+"Use Video" = "Usar video";
 
 /* No comment provided by engineer. */
-"Video" = "Video";
+"Video" = "Vídeo";
 
 /* No comment provided by engineer. */
-"VIDEO" = "VIDEO";
+"VIDEO" = "VÍDEO";
 
 /* No comment provided by engineer. */
 "Videos" = "Videos";
